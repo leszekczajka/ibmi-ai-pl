@@ -10,6 +10,8 @@
 #   make programs - Kompilacja programów RPG
 # ================================================================
 
+.ONESHELL:
+
 # Konfiguracja
 LIB = IBMIAI
 SRCPF_DDS = QDDSSRC
@@ -76,10 +78,10 @@ pf:
 lf: pf
 	@echo "Kompilacja plików logicznych..."
 	@liblist -a $(LIB) 2>/dev/null || true
-	@for file in $(LF_FILES); do \
-		echo "  Kompilacja $$file..."; \
-		system "DLTF FILE($(LIB)/$$file)" 2>/dev/null || true; \
-		system "CRTLF FILE($(LIB)/$$file) SRCFILE($(LIB)/$(SRCPF_DDS)) SRCMBR($$file)" || exit 1; \
+	@for file in $(LF_FILES); do
+		echo "  Kompilacja $$file..."
+		system "DLTF FILE($(LIB)/$$file)" 2>/dev/null || true
+		system "CRTLF FILE($(LIB)/$$file) SRCFILE($(LIB)/$(SRCPF_DDS)) SRCMBR($$file)" || exit 1
 	done
 
 # ================================================================
@@ -89,10 +91,10 @@ lf: pf
 displays:
 	@echo "Kompilacja display files..."
 	@liblist -a $(LIB) 2>/dev/null || true
-	@for file in $(DSPF_FILES); do \
-		echo "  Kompilacja $$file..."; \
-		system "DLTF FILE($(LIB)/$$file)" 2>/dev/null || true; \
-		system "CRTDSPF FILE($(LIB)/$$file) SRCFILE($(LIB)/$(SRCPF_DDS)) SRCMBR($$file)" || exit 1; \
+	@for file in $(DSPF_FILES); do
+		echo "  Kompilacja $$file..."
+		system "DLTF FILE($(LIB)/$$file)" 2>/dev/null || true
+		system "CRTDSPF FILE($(LIB)/$$file) SRCFILE($(LIB)/$(SRCPF_DDS)) SRCMBR($$file)" || exit 1
 	done
 
 # ================================================================
@@ -102,10 +104,10 @@ displays:
 programs:
 	@echo "Kompilacja programów RPG..."
 	@liblist -a $(LIB) 2>/dev/null || true
-	@for file in $(RPG_PROGRAMS); do \
-		echo "  Kompilacja $$file..."; \
-		system "DLTPGM PGM($(LIB)/$$file)" 2>/dev/null || true; \
-		system "CRTBNDRPG PGM($(LIB)/$$file) SRCFILE($(LIB)/$(SRCPF_RPG)) SRCMBR($$file) DBGVIEW(*SOURCE)" || exit 1; \
+	@for file in $(RPG_PROGRAMS); do
+		echo "  Kompilacja $$file..."
+		system "DLTPGM PGM($(LIB)/$$file)" 2>/dev/null || true
+		system "CRTBNDRPG PGM($(LIB)/$$file) SRCFILE($(LIB)/$(SRCPF_RPG)) SRCMBR($$file) DBGVIEW(*SOURCE)" || exit 1
 	done
 
 # ================================================================
