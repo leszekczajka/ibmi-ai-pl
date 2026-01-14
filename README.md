@@ -29,7 +29,25 @@ Dla każdej wskazanej pozycji na liście dostępne są opcje:
 * System: IBM i 7.5
 * Baza danych: IBM DB2 for IBM i
 
+## Szybki start
+
+```bash
+# W PASE na IBM i
+cd /home/twoj_uzytkownik
+git clone <url_repozytorium> ibmi-ai
+cd ibmi-ai
+make all
+
+# Uruchomienie programu
+system "CALL PGM(IBMIAI/INSTMGR)"
+```
+
+Więcej informacji w [KOMPILACJA.md](KOMPILACJA.md)
+
 ## Struktura projektu
+
+### Kompilacja
+- [Makefile](Makefile) - Automatyczna kompilacja projektu (użyj `make all`)
 
 ### Pliki bazy danych
 - [INSTPF.PF](QDDSSRC/INSTPF.PF) - Plik fizyczny przechowujący dane instrumentów
@@ -43,4 +61,4 @@ Dla każdej wskazanej pozycji na liście dostępne są opcje:
 - [INSTMGR.RPGLE](QRPGLESRC/INSTMGR.RPGLE) - Główny program zarządzający w RPG ILE
 
 ### Dokumentacja
-- [KOMPILACJA.md](KOMPILACJA.md) - Instrukcja kompilacji i uruchomienia aplikacji
+- [KOMPILACJA.md](KOMPILACJA.md) - Szczegółowa instrukcja kompilacji i uruchomienia aplikacji

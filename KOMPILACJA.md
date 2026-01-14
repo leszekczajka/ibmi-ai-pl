@@ -5,11 +5,87 @@
 - IBM i 7.5 lub nowszy
 - Dostęp do biblioteki (np. IBMIAI)
 - Uprawnienia do tworzenia obiektów
+- Dostęp do PASE (dla kompilacji przez Makefile)
+- GNU Make zainstalowany w PASE (dla automatycznej kompilacji)
 
-## Struktura katalogów
+## Metody kompilacji
+
+Projekt można skompilować na dwa sposoby:
+1. **Automatycznie przez Makefile** (zalecane) - patrz sekcja "Kompilacja automatyczna"
+2. **Ręcznie przez komendy CL** - patrz sekcja "Kompilacja ręczna"
+
+---
+
+## Kompilacja automatyczna przez Makefile (zalecane)
+
+### Przygotowanie
+
+1. Sklonuj repozytorium w PASE:
+```bash
+cd /home/twoj_uzytkownik
+git clone <url_repozytorium> ibmi-ai
+cd ibmi-ai
+```
+
+2. Uruchom kompilację:
+```bash
+make all
+```
+
+To polecenie automatycznie:
+- Utworzy bibliotekę IBMIAI
+- Utworzy pliki źródłowe (QDDSSRC, QRPGLESRC)
+- Skopiuje wszystkie źródła z IFS do source members
+- Skompiluje pliki fizyczne i logiczne
+- Skompiluje display files
+- Skompiluje programy RPG
+
+### Dostępne komendy make
+
+```bash
+make all       # Kompilacja wszystkich obiektów (setup + files + displays + programs)
+make setup     # Tylko utworzenie biblioteki i skopiowanie źródeł
+make files     # Tylko kompilacja plików bazy danych (PF i LF)
+make displays  # Tylko kompilacja display files
+make programs  # Tylko kompilacja programów RPG
+make clean     # Usunięcie biblioteki i wszystkich obiektów
+make rebuild   # Czyszczenie i ponowna kompilacja (clean + all)
+make help      # Wyświetlenie pomocy
+```
+
+### Konfiguracja Makefile
+
+Domyślna konfiguracja w pliku [Makefile](Makefile):
+- Biblioteka: `IBMIAI`
+- Source file DDS: `QDDSSRC`
+- Source file RPG: `QRPGLESRC`
+
+Aby zmienić nazwę biblioteki, edytuj linię w Makefile:
+```makefile
+LIB = TWOJA_BIBLIOTEKA
+```
+
+### Po kompilacji
+
+```bash
+# Uruchomienie programu z PASE
+system "CALL PGM(IBMIAI/INSTMGR)"
+
+# Lub zaloguj się do 5250 i uruchom:
+CALL PGM(IBMIAI/INSTMGR)
+```
+
+---
+
+## Kompilacja ręczna przez komendy CL
+
+Jeśli wolisz lub potrzebujesz skompilować projekt ręcznie, wykonaj poniższe kroki.
+
+### Struktura katalogów
 
 ```
 ibmi-ai/
+├── Makefile          - Automatyczna kompilacja
 ├── QDDSSRC/          - Źródła DDS (pliki fizyczne, logiczne, display)
 │   ├── INSTPF.PF     - Plik fizyczny instrumentów
 │   ├── INSTLF.LF     - Plik logiczny (sortowanie po ISIN)
@@ -19,7 +95,7 @@ ibmi-ai/
     └── INSTMGR.RPGLE - Program zarządzający
 ```
 
-## Krok 1: Utworzenie biblioteki
+### Krok 1: Utworzenie biblioteki
 
 ```
 CRTLIB LIB(IBMIAI) TEXT('Słownik instrumentów finansowych')
@@ -92,11 +168,13 @@ CRTBNDRPG PGM(IBMIAI/INSTMGR) SRCFILE(IBMIAI/QRPGLESRC) SRCMBR(INSTMGR) +
           DBGVIEW(*SOURCE)
 ```
 
-## Krok 6: Uruchomienie aplikacji
+### Krok 6: Uruchomienie aplikacji
 
 ```
 CALL PGM(IBMIAI/INSTMGR)
 ```
+
+---
 
 ## Funkcje aplikacji
 
