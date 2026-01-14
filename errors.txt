@@ -1,16 +1,14 @@
-Kompilacja display files...
-CPC2196: Library IBMIAI added to library list.
-  Kompilacja INSTDSPF...
+  Kompilacja INSTMNT...
 CPF7311: Errors in DDS not allowed with specified GENLVL.
-CPF7302: File INSTDSPF not created in library IBMIAI.
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    1
- File name . . . . . . . . . . . . . . . . . . . . . :   INSTDSPF
+CPF7302: File INSTMNT not created in library IBMIAI.
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    1
+ File name . . . . . . . . . . . . . . . . . . . . . :   INSTMNT
    Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
  File attribute  . . . . . . . . . . . . . . . . . . :   Display
  Source file containing DDS  . . . . . . . . . . . . :   QDDSSRC
    Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- Source member containing DDS  . . . . . . . . . . . :   INSTDSPF
- Source member last changed  . . . . . . . . . . . . :   14/01/26  21:45:10
+ Source member containing DDS  . . . . . . . . . . . :   INSTMNT
+ Source member last changed  . . . . . . . . . . . . :   14/01/26  21:47:49
  Source listing options  . . . . . . . . . . . . . . :   *SOURCE    *LIST      *NOSECLVL  *NOEVENTF
  DDS generation severity level . . . . . . . . . . . :   20
  DDS flagging severity level . . . . . . . . . . . . :   00
@@ -21,106 +19,102 @@ CPF7302: File INSTDSPF not created in library IBMIAI.
                                       Data Description Source
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
     100       A* ================================================================
-    200       A* Display File INSTDSPF - Wyświetlanie listy instrumentów
+    200       A* Display File INSTMNT - Dodawanie/edycja instrumentu
     300       A* ================================================================
     400       A                                      DSPSIZ(24 80 *DS3)
     500       A                                      PRINT
     600       A                                      INDARA
-    700       A                                      CA03(03 'Exit')
-    800       A                                      CA06(06 'Dodaj')
-    900       A          R HEADER
-   1000       A                                      OVERLAY
-   1100       A                                  1  2'Słownik instrumentów finansowych'
-   1200       A                                      DSPATR(HI)
-   1300       A                                  2  2'Opcja i kod ISIN'
-   1400       A                                  3  2'  Kod ISIN    Nazwa          -
-   1500       A                                      Emitent         Data em. Kr Wal -
-   1600       A                                       Wlk.em.'
-   1700       A          R FOOTER
-   1800       A                                      OVERLAY
-   1900       A                                 23  2'F3=Exit   F6=Dodaj'
-   2000       A                                      COLOR(BLU)
-   2100       A          R SFL                       SFL
-   2200       A            SFOPT          1A  B  4  2VALUES(' ' '4')
-   2300       A            SFISIN        12A  O  4  4
-   2400       A            SFSHORT       20A  O  4 17
-   2500       A            SFEMIT        18A  O  4 38
-   2600       A            SFISSDT        8S 0O  4 57DATFMT(*ISO)
-*                                            CPD7554-*
-   2700       A            SFCNTRY        2A  O  4 66
-*                                      CPD7866-******
-   2800       A            SFCURR         3A  O  4 69
-   2900       A            SFSIZE         9Y 2O  4 73EDTCDE(1)
-   3000       A          R SFLCTL                    SFLCTL(SFL)
-   3100       A                                      SFLSIZ(9999)
-   3200       A                                      SFLPAG(0010)
-   3300       A  31                                  SFLDSP
-   3400       A  32                                  SFLDSPCTL
-   3500       A  33                                  SFLCLR
-   3600       A  34                                  SFLEND(*MORE)
+    700       A                                      CA03(03 'Anuluj')
+    800       A                                      CA12(12 'Anuluj')
+    900       A          R MNTSCR
+   1000       A                                  1  2'Instrument finansowy'
+   1100       A                                      DSPATR(HI)
+   1200       A            MODE          10A  O  1 70
+   1300       A                                  3  2'Kod ISIN . . . . . . :'
+   1400       A            ISIN          12A  B  3 28DSPATR(&ISINDS)
+*                                                   CPD5109-*
+   1500       A  50                                  DSPATR(PR)
+   1600       A            ISINDS         1A  H
+   1700       A                                  5  2'Nazwa krótka . . . . :'
+   1800       A            SHORTNM       40A  B  5 28
+   1900       A  51                                  DSPATR(PR)
+   2000       A                                  7  2'Emitent  . . . . . . :'
+   2100       A            EMITENT       60A  B  7 28
+   2200       A  52                                  DSPATR(PR)
+   2300       A                                  9  2'Data emisji  . . . . :'
+   2400       A            ISSUEDT         L  B  9 28DATFMT(*ISO)
+   2500       A  53                                  DSPATR(PR)
+   2600       A                                 11  2'Kraj emisji  . . . . :'
+   2700       A            COUNTRY        2A  B 11 28
+   2800       A  54                                  DSPATR(PR)
+   2900       A                                 13  2'Waluta emisji  . . . :'
+   3000       A            CURRENCY       3A  B 13 28
+   3100       A  55                                  DSPATR(PR)
+   3200       A                                 15  2'Wielkość emisji  . . :'
+   3300       A            ISSUESZ       15Y 2B 15 28EDTCDE(1)
+   3400       A  56                                  DSPATR(PR)
+   3500       A                                 20  2'F3=Anuluj   F12=Anuluj'
+   3600       A                                      COLOR(BLU)
+   3700       A            ERRMSG        78A  O 23  2COLOR(RED)
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    2
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    2
                                       Data Description Source
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
-   3700       A            DUMMY          1A  H
                          * * * * *   E N D   O F   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    3
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    3
                                           Expanded Source
                                                                                           Field       Buffer position
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8 length        Out     In
     400                                              DSPSIZ(24 80 *DS3) PRINT INDARA +
-    700                                              CA03(03 'Exit') CA06(06 'Dodaj')
+    700                                              CA03(03 'Anuluj') +
+    800                                              CA12(12 'Anuluj')
                * Indicator Area:
-               *  *IN03        *IN06
-    900                  R HEADER                    OVERLAY
-   1100                                          1  2'Słownik instrumentów finansowych' +    32
-   1200                                              DSPATR(HI)
-   1300                                          2  2'Opcja i kod ISIN'                      16
-   1400                                          3  2'  Kod ISIN    Nazwa          Emite-    69
-   1400                                              nt         Data em. Kr Wal  Wlk.em.-
-   1400                                              '
+               *  *IN50        *IN51        *IN52        *IN53        *IN54
+               *  *IN55        *IN56
                * Indicator Area:
-               *  *IN03        *IN06
-   1700                  R FOOTER                    OVERLAY
-   1900                                         23  2'F3=Exit   F6=Dodaj' COLOR(BLU)         18
-               * Indicator Area:
-               *  *IN03        *IN06
-   2100                  R SFL                       SFL
-   2200                    SFOPT          1A  B  4  2VALUES(' ' '4')                          1            1       1
-   2300                    SFISIN        12A  O  4  4                                        12            2       2
-   2400                    SFSHORT       20A  O  4 17                                        20           14      14
-   2500                    SFEMIT        18A  O  4 38                                        18           34      34
-   2600                    SFISSDT       10S 0O  4 57                                        10           52      52
-   2700                    SFCNTRY        2A  O  4 66                                         2           62      62
-   2800                    SFCURR         3A  O  4 69                                         3           64      64
-   2900                    SFSIZE         9Y 2O  4 73EDTCDE(1)                                9           67      67
-               * Indicator Area:
-               *  *IN31        *IN32        *IN33        *IN34
-               * Indicator Area:
-               *  *IN03        *IN06
-   3000                  R SFLCTL
-                 *DS3                                SFLSIZ(9999) SFLPAG(010)
-   3000                                              SFLCTL(SFL)
-   3300          31                                  SFLDSP
-   3400          32                                  SFLDSPCTL
-   3500          33                                  SFLCLR
-   3600          34                                  SFLEND(*MORE)
-   3700                    DUMMY          1A  H                                               1            1       1
+               *  *IN03        *IN12
+    900                  R MNTSCR
+   1000                                          1  2'Instrument finansowy' DSPATR(HI)       20
+   1200                    MODE          10A  O  1 70                                        10            1
+   1300                                          3  2'Kod ISIN . . . . . . :'                22
+   1400                    ISIN          12A  B  3 28                                        12           11       1
+   1500          50                                  DSPATR(PR)
+   1600                    ISINDS         1A  H                                               1           23      13
+   1700                                          5  2'Nazwa krótka . . . . :'                22
+   1800                    SHORTNM       40A  B  5 28                                        40           24      14
+   1900          51                                  DSPATR(PR)
+   2000                                          7  2'Emitent  . . . . . . :'                22
+   2100                    EMITENT       60A  B  7 28                                        60           64      54
+   2200          52                                  DSPATR(PR)
+   2300                                          9  2'Data emisji  . . . . :'                22
+   2400                    ISSUEDT       10L  B  9 28DATFMT(*ISO)                            10          124     114
+   2500          53                                  DSPATR(PR)
+   2600                                         11  2'Kraj emisji  . . . . :'                22
+   2700                    COUNTRY        2A  B 11 28                                         2          134     124
+   2800          54                                  DSPATR(PR)
+   2900                                         13  2'Waluta emisji  . . . :'                22
+   3000                    CURRENCY       3A  B 13 28                                         3          136     126
+   3100          55                                  DSPATR(PR)
+   3200                                         15  2'Wielkość emisji  . . :'                22
+   3300                    ISSUESZ       15Y 2B 15 28EDTCDE(1)                               15          139     129
+   3400          56                                  DSPATR(PR)
+   3500                                         20  2'F3=Anuluj   F12=Anuluj' +              22
+   3600                                              COLOR(BLU)
+   3700                    ERRMSG        78A  O 23  2COLOR(RED)                              78          154
                  * * * * *   E N D   O F   E X P A N D E D   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    4
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    4
                                              Messages
     ID      Severity  Number
-* CPD7554      20        1      Message . . . . :   Keyword not valid with data type or keyboard shift value.
-* CPD7866      10        1      Message . . . . :   Field overlaps another field with no conditions specified.
+* CPD5109      20        1      Message . . . . :   Attributes of field not valid.
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    5
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    5
                                           Message Summary
     Total          Informational          Warning        Error       Severe
                        (0-9)              (10-19)       (20-29)      (30-99)
-        2                 0                    1             1            0
-* CPF7302      40               Message . . . . :   File INSTDSPF not created in library IBMIAI.
+        1                 0                    0             1            0
+* CPF7302      40               Message . . . . :   File INSTMNT not created in library IBMIAI.
                          * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
                                                    ***       KDPW S.A.       ***
 make: *** [Makefile:93: displays] Error 1
