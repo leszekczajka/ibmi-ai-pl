@@ -8,7 +8,7 @@
      A                                      TEXT('Nazwa krótka instrumentu')
      A            EMITENT       60A         COLHDG('Emitent')
      A                                      TEXT('Nazwa emitenta')
-     A            ISSUEDT        L         COLHDG('Data emisji')
+     A            ISSUEDT         L         COLHDG('Data emisji')
      A                                      TEXT('Data emisji')
      A            COUNTRY        2A         COLHDG('Kraj')
      A                                      TEXT('Kraj emisji (kod ISO)')

@@ -23,7 +23,7 @@
      A            SFISIN        12A  O  4  6
      A            SFSHORT       20A  O  4 20
      A            SFEMIT        20A  O  4 41
-     A            SFISSDT        8Y  O  4 62EDTCDE(Y)
+     A            SFISSDT         L  O  4 62EDTCDE(Y)
      A            SFCNTRY        2A  O  4 71
      A            SFCURR         3A  O  4 74
      A            SFSIZE        11Y 2O  4 78EDTCDE(1)
