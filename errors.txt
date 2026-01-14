@@ -1,120 +1,814 @@
-  Kompilacja INSTMNT...
-CPF7311: Errors in DDS not allowed with specified GENLVL.
-CPF7302: File INSTMNT not created in library IBMIAI.
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    1
- File name . . . . . . . . . . . . . . . . . . . . . :   INSTMNT
-   Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- File attribute  . . . . . . . . . . . . . . . . . . :   Display
- Source file containing DDS  . . . . . . . . . . . . :   QDDSSRC
-   Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- Source member containing DDS  . . . . . . . . . . . :   INSTMNT
- Source member last changed  . . . . . . . . . . . . :   14/01/26  21:47:49
- Source listing options  . . . . . . . . . . . . . . :   *SOURCE    *LIST      *NOSECLVL  *NOEVENTF
- DDS generation severity level . . . . . . . . . . . :   20
- DDS flagging severity level . . . . . . . . . . . . :   00
- Authority . . . . . . . . . . . . . . . . . . . . . :   *LIBCRTAUT
- Replace file  . . . . . . . . . . . . . . . . . . . :   *YES
- Text  . . . . . . . . . . . . . . . . . . . . . . . :
- Compiler  . . . . . . . . . . . . . . . . . . . . . :   IBM System i5 Data Description Processor
-                                      Data Description Source
- SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
-    100       A* ================================================================
-    200       A* Display File INSTMNT - Dodawanie/edycja instrumentu
-    300       A* ================================================================
-    400       A                                      DSPSIZ(24 80 *DS3)
-    500       A                                      PRINT
-    600       A                                      INDARA
-    700       A                                      CA03(03 'Anuluj')
-    800       A                                      CA12(12 'Anuluj')
-    900       A          R MNTSCR
-   1000       A                                  1  2'Instrument finansowy'
-   1100       A                                      DSPATR(HI)
-   1200       A            MODE          10A  O  1 70
-   1300       A                                  3  2'Kod ISIN . . . . . . :'
-   1400       A            ISIN          12A  B  3 28DSPATR(&ISINDS)
-*                                                   CPD5109-*
-   1500       A  50                                  DSPATR(PR)
-   1600       A            ISINDS         1A  H
-   1700       A                                  5  2'Nazwa krótka . . . . :'
-   1800       A            SHORTNM       40A  B  5 28
-   1900       A  51                                  DSPATR(PR)
-   2000       A                                  7  2'Emitent  . . . . . . :'
-   2100       A            EMITENT       60A  B  7 28
-   2200       A  52                                  DSPATR(PR)
-   2300       A                                  9  2'Data emisji  . . . . :'
-   2400       A            ISSUEDT         L  B  9 28DATFMT(*ISO)
-   2500       A  53                                  DSPATR(PR)
-   2600       A                                 11  2'Kraj emisji  . . . . :'
-   2700       A            COUNTRY        2A  B 11 28
-   2800       A  54                                  DSPATR(PR)
-   2900       A                                 13  2'Waluta emisji  . . . :'
-   3000       A            CURRENCY       3A  B 13 28
-   3100       A  55                                  DSPATR(PR)
-   3200       A                                 15  2'Wielkość emisji  . . :'
-   3300       A            ISSUESZ       15Y 2B 15 28EDTCDE(1)
-   3400       A  56                                  DSPATR(PR)
-   3500       A                                 20  2'F3=Anuluj   F12=Anuluj'
-   3600       A                                      COLOR(BLU)
-   3700       A            ERRMSG        78A  O 23  2COLOR(RED)
+Kompilacja programów RPG...
+CPC2196: Library IBMIAI added to library list.
+  Kompilacja INSTMGR...
+RNS9308: Compilation stopped. Severity 40 errors found in program.
+RNS9310: Compilation failed. Program INSTMGR not created in library IBMIAI.
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      1
+  Command  . . . . . . . . . . . . :   CRTBNDRPG
+    Issued by  . . . . . . . . . . :     PG_LESZEK
+  Program  . . . . . . . . . . . . :   INSTMGR
+    Library  . . . . . . . . . . . :     IBMIAI
+  Text 'description' . . . . . . . :   *SRCMBRTXT
+  Source Member  . . . . . . . . . :   INSTMGR
+  Source File  . . . . . . . . . . :   QRPGLESRC
+    Library  . . . . . . . . . . . :     IBMIAI
+    CCSID  . . . . . . . . . . . . :     870
+  Text 'description' . . . . . . . :
+  Last Change  . . . . . . . . . . :   14/01/26  21:50:26
+  Generation severity level  . . . :   10
+  Default activation group . . . . :   *YES
+  Compiler options . . . . . . . . :   *XREF      *GEN       *NOSECLVL  *SHOWCPY
+                                       *EXPDDS    *EXT       *NOSHOWSKP *NOSRCSTMT
+                                       *DEBUGIO   *UNREF     *NOEVENTF
+  Debugging views  . . . . . . . . :   *SOURCE
+  Debug encryption key . . . . . . :   *NONE
+  Output . . . . . . . . . . . . . :   *PRINT
+  Optimization level . . . . . . . :   *NONE
+  Source listing indentation . . . :   *NONE
+  Type conversion options  . . . . :   *NONE
+  Sort sequence  . . . . . . . . . :   *HEX
+  Language identifier  . . . . . . :   *JOBRUN
+  Replace program  . . . . . . . . :   *YES
+  User profile . . . . . . . . . . :   *USER
+  Authority  . . . . . . . . . . . :   *LIBCRTAUT
+  Truncate numeric . . . . . . . . :   *YES
+  Fix numeric  . . . . . . . . . . :   *NONE
+  Target release . . . . . . . . . :   *CURRENT
+  Allow null values  . . . . . . . :   *NO
+  Define condition names . . . . . :   *NONE
+  Enable performance collection  . :   *PEP
+  Profiling data . . . . . . . . . :   *NOCOL
+  Licensed Internal Code options . :
+  Generate program interface . . . :   *NO
+  Include directory  . . . . . . . :
+  Preprocessor options . . . . . . :   *NONE
+  Require prototype for export . . :   *NO
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    2
-                                      Data Description Source
- SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
-                         * * * * *   E N D   O F   S O U R C E   * * * * *
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      2
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+                          S o u r c e   L i s t i n g
+     1 H DFTACTGRP(*NO) ACTGRP(*CALLER)                                                                          000000     000100
+     2 H OPTION(*NODEBUGIO:*SRCSTMT)                                                                             000000     000200
+000300                                                                                                           000000     000300
+000400  *================================================================                                        000000     000400
+000500  * Program INSTMGR - Zarządzanie słownikiem instrumentów                                                  000000     000500
+000600  *================================================================                                        000000     000600
+000700                                                                                                           000000     000700
+        *--------------------------------------------------------------------*
+        * Compiler Options in Effect:                                        *
+        *--------------------------------------------------------------------*
+        *  Text 'description' . . . . . . . :                                *
+        *  Generation severity level  . . . :   10                           *
+        *  Default activation group . . . . :   *NO                          *
+        *  Compiler options . . . . . . . . :   *XREF      *GEN              *
+        *                                       *NOSECLVL  *SHOWCPY          *
+        *                                       *EXPDDS    *EXT              *
+        *                                       *NOSHOWSKP *SRCSTMT          *
+        *                                       *NODEBUGIO *UNREF            *
+        *                                       *NOEVENTF                    *
+        *  Optimization level . . . . . . . :   *NONE                        *
+        *  Source listing indentation . . . :   *NONE                        *
+        *  Type conversion options  . . . . :   *NONE                        *
+        *  Sort sequence  . . . . . . . . . :   *HEX                         *
+        *  Language identifier  . . . . . . :   *JOBRUN                      *
+        *  User profile . . . . . . . . . . :   *USER                        *
+        *  Authority  . . . . . . . . . . . :   *LIBCRTAUT                   *
+        *  Truncate numeric . . . . . . . . :   *YES                         *
+        *  Fix numeric  . . . . . . . . . . :   *NONE                        *
+        *  Allow null values  . . . . . . . :   *NO                          *
+        *  Storage model . . .  . . . . . . :   *SNGLVL                      *
+        *  Binding directory from Command . :   *NONE                        *
+        *  Binding directory from Source  . :   *NONE                        *
+        *  Activation group . . . . . . . . :   *CALLER                      *
+        *  Enable performance collection  . :   *PEP                         *
+        *  Profiling data . . . . . . . . . :   *NOCOL                       *
+        *  Generate program interface . . . :   *NO                          *
+        *  Require prototype for export . . :   *NO                          *
+        *--------------------------------------------------------------------*
+000800 FINSTLF    IF   E           K DISK                                                                        000000     000800
+        *--------------------------------------------------------------------------------------------*
+        *                               RPG name         External name                               *
+        * File name. . . . . . . . . :  INSTLF           IBMIAI/INSTLF                               *
+        * Record format(s) . . . . . :  INSTREC          INSTREC                                     *
+        *--------------------------------------------------------------------------------------------*
+000900 FINSTPF    UF A E           K DISK                                                                        000000     000900
+======> aaaaaa
+======> bbbbbb
+*RNF2121 30 a      000900  Record format INSTREC in file INSTPF already defined;
+                           record format is ignored.
+*RNF2109 40 b      000900  All Record Formats for externally-described file INSTPF
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    3
-                                          Expanded Source
-                                                                                          Field       Buffer position
- SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8 length        Out     In
-    400                                              DSPSIZ(24 80 *DS3) PRINT INDARA +
-    700                                              CA03(03 'Anuluj') +
-    800                                              CA12(12 'Anuluj')
-               * Indicator Area:
-               *  *IN50        *IN51        *IN52        *IN53        *IN54
-               *  *IN55        *IN56
-               * Indicator Area:
-               *  *IN03        *IN12
-    900                  R MNTSCR
-   1000                                          1  2'Instrument finansowy' DSPATR(HI)       20
-   1200                    MODE          10A  O  1 70                                        10            1
-   1300                                          3  2'Kod ISIN . . . . . . :'                22
-   1400                    ISIN          12A  B  3 28                                        12           11       1
-   1500          50                                  DSPATR(PR)
-   1600                    ISINDS         1A  H                                               1           23      13
-   1700                                          5  2'Nazwa krótka . . . . :'                22
-   1800                    SHORTNM       40A  B  5 28                                        40           24      14
-   1900          51                                  DSPATR(PR)
-   2000                                          7  2'Emitent  . . . . . . :'                22
-   2100                    EMITENT       60A  B  7 28                                        60           64      54
-   2200          52                                  DSPATR(PR)
-   2300                                          9  2'Data emisji  . . . . :'                22
-   2400                    ISSUEDT       10L  B  9 28DATFMT(*ISO)                            10          124     114
-   2500          53                                  DSPATR(PR)
-   2600                                         11  2'Kraj emisji  . . . . :'                22
-   2700                    COUNTRY        2A  B 11 28                                         2          134     124
-   2800          54                                  DSPATR(PR)
-   2900                                         13  2'Waluta emisji  . . . :'                22
-   3000                    CURRENCY       3A  B 13 28                                         3          136     126
-   3100          55                                  DSPATR(PR)
-   3200                                         15  2'Wielkość emisji  . . :'                22
-   3300                    ISSUESZ       15Y 2B 15 28EDTCDE(1)                               15          139     129
-   3400          56                                  DSPATR(PR)
-   3500                                         20  2'F3=Anuluj   F12=Anuluj' +              22
-   3600                                              COLOR(BLU)
-   3700                    ERRMSG        78A  O 23  2COLOR(RED)                              78          154
-                 * * * * *   E N D   O F   E X P A N D E D   S O U R C E   * * * * *
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      3
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+                           ignored or dropped due to error; file ignored.
+        *--------------------------------------------------------------------------------------------*
+        *                               RPG name         External name                               *
+        * File name. . . . . . . . . :  INSTPF           IBMIAI/INSTPF                               *
+        * Record format(s) . . . . . :  (Not used)       INSTREC                                     *
+        *--------------------------------------------------------------------------------------------*
+001000 FINSTDSPF  CF   E             WORKSTN                                                                     000000     001000
+001100 F                                     SFILE(SFL:RRN)                                                      000000     001100
+        *--------------------------------------------------------------------------------------------*
+        *                               RPG name         External name                               *
+        * File name. . . . . . . . . :  INSTDSPF         IBMIAI/INSTDSPF                             *
+        * Record format(s) . . . . . :  HEADER           HEADER                                      *
+        *                               FOOTER           FOOTER                                      *
+        *                               SFL              SFL                                         *
+        *                               SFLCTL           SFLCTL                                      *
+        *--------------------------------------------------------------------------------------------*
+001200 FINSTMNT   CF   E             WORKSTN                                                                     000000     001200
+001300                                                                                                           000000     001300
+        *--------------------------------------------------------------------------------------------*
+        *                               RPG name         External name                               *
+        * File name. . . . . . . . . :  INSTMNT          IBMIAI/INSTMNT                              *
+        * Record format(s) . . . . . :  MNTSCR           MNTSCR                                      *
+        *--------------------------------------------------------------------------------------------*
+001400 D RRN             S              4P 0                                                                     000000     001400
+001500 D LASTKEY         S             12A                                                                       000000     001500
+001600 D ACTION          S              1A                                                                       000000     001600
+001700 D EOF             S               N                                                                       000000     001700
+001800                                                                                                           000000     001800
+001900  * Procedura główna                                                                                       000000     001900
+002000  /FREE                                                                                                    000000     002000
+000001=IINSTREC                                                                                                            1000001
+        *--------------------------------------------------------------------------------------------*                     1
+        * RPG record format  . . . . :  INSTREC                                                      *                     1
+        * External format  . . . . . :  INSTREC : IBMIAI/INSTLF                                      *                     1
+        *--------------------------------------------------------------------------------------------*                     1
+000002=I                             A    1   12  ISIN                            Kod ISIN instrumentu                     1000002
+000003=I                             A   13   52  SHORTNM                         Nazwa krótka instrumentu                 1000003
+000004=I                             A   53  112  EMITENT                         Nazwa emitenta                           1000004
+000005=I                        *ISO-D  113  122  ISSUEDT                         Data emisji                              1000005
+000006=I                             A  123  124  COUNTRY                         Kraj emisji (kod ISO)                    1000006
+000007=I                             A  125  127  CURRENCY                        Waluta emisji (kod ISO)                  1000007
+000008=I                             P  128  135 2ISSUESZ                         Wielkość emisji                          1000008
+000001=IHEADER                                                                                                             2000001
+        *--------------------------------------------------------------------------------------------*                     2
+        * RPG record format  . . . . :  HEADER                                                       *                     2
+        * External format  . . . . . :  HEADER : IBMIAI/INSTDSPF                                     *                     2
+        *--------------------------------------------------------------------------------------------*                     2
+000001=IFOOTER                                                                                                             3000001
+        *--------------------------------------------------------------------------------------------*                     3
+        * RPG record format  . . . . :  FOOTER                                                       *                     3
+        * External format  . . . . . :  FOOTER : IBMIAI/INSTDSPF                                     *                     3
+        *--------------------------------------------------------------------------------------------*                     3
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    4
-                                             Messages
-    ID      Severity  Number
-* CPD5109      20        1      Message . . . . :   Attributes of field not valid.
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      4
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+000001=ISFL                                                                                                                4000001
+        *--------------------------------------------------------------------------------------------*                     4
+        * RPG record format  . . . . :  SFL                                                          *                     4
+        * External format  . . . . . :  SFL : IBMIAI/INSTDSPF                                        *                     4
+        *--------------------------------------------------------------------------------------------*                     4
+000002=I                             A    1    1  SFOPT                                                                    4000002
+000003=I                             A    2   13  SFISIN                                                                   4000003
+000004=I                             A   14   31  SFSHORT                                                                  4000004
+000005=I                             A   32   47  SFEMIT                                                                   4000005
+000006=I                             A   48   57  SFISSDT                                                                  4000006
+000007=I                             A   58   59  SFCNTRY                                                                  4000007
+000008=I                             A   60   62  SFCURR                                                                   4000008
+000009=I                             S   63   71 2SFSIZE                                                                   4000009
+000001=ISFLCTL                                                                                                             5000001
+        *--------------------------------------------------------------------------------------------*                     5
+        * RPG record format  . . . . :  SFLCTL                                                       *                     5
+        * External format  . . . . . :  SFLCTL : IBMIAI/INSTDSPF                                     *                     5
+        *--------------------------------------------------------------------------------------------*                     5
+000002=I                             A    1    1  DUMMY                                                                    5000002
+000001=IMNTSCR                                                                                                             6000001
+        *--------------------------------------------------------------------------------------------*                     6
+        * RPG record format  . . . . :  MNTSCR                                                       *                     6
+        * External format  . . . . . :  MNTSCR : IBMIAI/INSTMNT                                      *                     6
+        *--------------------------------------------------------------------------------------------*                     6
+000002=I                             A    1   12  ISIN                                                                     6000002
+000003=I                             A   13   52  SHORTNM                                                                  6000003
+000004=I                             A   53  112  EMITENT                                                                  6000004
+000005=I                        *ISO-D  113  122  ISSUEDT                                                                  6000005
+000006=I                             A  123  124  COUNTRY                                                                  6000006
+000007=I                             A  125  127  CURRENCY                                                                 6000007
+000008=I                             S  128  142 2ISSUESZ                                                                  6000008
+002100     Dow '1';                                                                                    B01       000000     002100
+002200        LoadSubfile();                                                                            01       000000     002200
+002300        DisplayList();                                                                            01       000000     002300
+002400                                                                                                           000000     002400
+002500        Select;                                                                                  B02       000000     002500
+002600           When *IN03;  // F3=Exit                                                               X02       000000     002600
+002700              Leave;                                                                              02       000000     002700
+002800           When *IN06;  // F6=Add                                                                X02       000000     002800
+002900              AddInstrument();                                                                    02       000000     002900
+003000           Other;                                                                                X02       000000     003000
+003100              ProcessOptions();                                                                   02       000000     003100
+003200        Endsl;                                                                                   E02       000000     003200
+003300     Enddo;                                                                                      E01       000000     003300
+003400                                                                                                           000000     003400
+003500     *INLR = *ON;                                                                                          000000     003500
+003600     Return;                                                                                               000000     003600
+003700  /END-FREE                                                                                                000000     003700
+003800                                                                                                           000000     003800
+003900  *================================================================                                        000000     003900
+004000  * Procedura LoadSubfile - Ładowanie subfile                                                              000000     004000
+004100  *================================================================                                        000000     004100
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTMNT           2/01/26 21:47:51        Page    5
-                                          Message Summary
-    Total          Informational          Warning        Error       Severe
-                       (0-9)              (10-19)       (20-29)      (30-99)
-        1                 0                    0             1            0
-* CPF7302      40               Message . . . . :   File INSTMNT not created in library IBMIAI.
-                         * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      5
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+000001=OHEADER                                                                                                             7000001
+        *--------------------------------------------------------------------------------------------*                     7
+        * RPG record format  . . . . :  HEADER                                                       *                     7
+        * External format  . . . . . :  HEADER : IBMIAI/INSTDSPF                                     *                     7
+        *--------------------------------------------------------------------------------------------*                     7
+000001=OFOOTER                                                                                                             8000001
+        *--------------------------------------------------------------------------------------------*                     8
+        * RPG record format  . . . . :  FOOTER                                                       *                     8
+        * External format  . . . . . :  FOOTER : IBMIAI/INSTDSPF                                     *                     8
+        *--------------------------------------------------------------------------------------------*                     8
+000001=OSFL                                                                                                                9000001
+        *--------------------------------------------------------------------------------------------*                     9
+        * RPG record format  . . . . :  SFL                                                          *                     9
+        * External format  . . . . . :  SFL : IBMIAI/INSTDSPF                                        *                     9
+        *--------------------------------------------------------------------------------------------*                     9
+000002=O                       SFOPT                1A CHAR        1                                                       9000002
+000003=O                       SFISIN              13A CHAR       12                                                       9000003
+000004=O                       SFSHORT             31A CHAR       18                                                       9000004
+000005=O                       SFEMIT              47A CHAR       16                                                       9000005
+000006=O                       SFISSDT             57A CHAR       10                                                       9000006
+000007=O                       SFCNTRY             59A CHAR        2                                                       9000007
+000008=O                       SFCURR              62A CHAR        3                                                       9000008
+000009=O                       SFSIZE              71S ZONE      9,2                                                       9000009
+000001=OSFLCTL                                                                                                            10000001
+        *--------------------------------------------------------------------------------------------*                    10
+        * RPG record format  . . . . :  SFLCTL                                                       *                    10
+        * External format  . . . . . :  SFLCTL : IBMIAI/INSTDSPF                                     *                    10
+        *--------------------------------------------------------------------------------------------*                    10
+000002=O                       DUMMY                1A CHAR        1                                                      10000002
+000001=OMNTSCR                                                                                                            11000001
+        *--------------------------------------------------------------------------------------------*                    11
+        * RPG record format  . . . . :  MNTSCR                                                       *                    11
+        * External format  . . . . . :  MNTSCR : IBMIAI/INSTMNT                                      *                    11
+        *--------------------------------------------------------------------------------------------*                    11
+000002=O                       MODE                10A CHAR       10                                                      11000002
+000003=O                       ISIN                22A CHAR       12                                                      11000003
+000004=O                       SHORTNM             62A CHAR       40                                                      11000004
+000005=O                       EMITENT            122A CHAR       60                                                      11000005
+000006=O                       ISSUEDT            132D DATE *ISO- 10                                                      11000006
+000007=O                       COUNTRY            134A CHAR        2                                                      11000007
+000008=O                       CURRENCY           137A CHAR        3                                                      11000008
+000009=O                       ISSUESZ            152S ZONE     15,2                                                      11000009
+000010=O                       ERRMSG             230A CHAR       78                                                      11000010
+004200 P LoadSubfile     B                                                                                       000000     004200
+004300 D LoadSubfile     PI                                                                                      000000     004300
+004400                                                                                                           000000     004400
+004500  /FREE                                                                                                    000000     004500
+004600     *IN33 = *ON;  // SFLCLR                                                                               000000     004600
+004700     WRITE SFLCTL;                                                                                         000000     004700
+004800     *IN33 = *OFF;                                                                                         000000     004800
+004900                                                                                                           000000     004900
+005000     RRN = 0;                                                                                              000000     005000
                                                    ***       KDPW S.A.       ***
-make: *** [Makefile:93: displays] Error 1
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      6
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+005100     SETLL *LOVAL INSTREC;                                                                                 000000     005100
+005200     EOF = *OFF;                                                                                           000000     005200
+005300                                                                                                           000000     005300
+005400     Dow NOT EOF;                                                                                B01       000000     005400
+005500        READ INSTREC;                                                                             01       000000     005500
+005600        If %EOF(INSTLF);                                                                         B02       000000     005600
+005700           EOF = *ON;                                                                             02       000000     005700
+005800        Else;                                                                                    X02       000000     005800
+005900           RRN = RRN + 1;                                                                         02       000000     005900
+006000           SFOPT = '';                                                                            02       000000     006000
+006100           SFISIN = ISIN;                                                                         02       000000     006100
+006200           SFSHORT = SHORTNM;                                                                     02       000000     006200
+006300           SFEMIT = EMITENT;                                                                      02       000000     006300
+006400           SFISSDT = %CHAR(ISSUEDT:*ISO);                                                         02       000000     006400
+006500           SFCNTRY = COUNTRY;                                                                     02       000000     006500
+006600           SFCURR = CURRENCY;                                                                     02       000000     006600
+006700           SFSIZE = ISSUESZ;                                                                      02       000000     006700
+006800           WRITE SFL;                                                                             02       000000     006800
+006900        Endif;                                                                                   E02       000000     006900
+007000     Enddo;                                                                                      E01       000000     007000
+007100                                                                                                           000000     007100
+007200     If RRN = 0;                                                                                 B01       000000     007200
+007300        *IN34 = *ON;  // SFLEND                                                                   01       000000     007300
+007400     Endif;                                                                                      E01       000000     007400
+007500  /END-FREE                                                                                                000000     007500
+007600 P LoadSubfile     E                                                                                       000000     007600
+007700                                                                                                           000000     007700
+007800  *================================================================                                        000000     007800
+007900  * Procedura DisplayList - Wyświetlenie listy                                                             000000     007900
+008000  *================================================================                                        000000     008000
+008100 P DisplayList     B                                                                                       000000     008100
+008200 D DisplayList     PI                                                                                      000000     008200
+008300                                                                                                           000000     008300
+008400  /FREE                                                                                                    000000     008400
+008500     *IN31 = (RRN > 0);  // SFLDSP                                                                         000000     008500
+008600     *IN32 = *ON;        // SFLDSPCTL                                                                      000000     008600
+008700                                                                                                           000000     008700
+008800     EXFMT SFLCTL;                                                                                         000000     008800
+008900                                                                                                           000000     008900
+009000     *IN31 = *OFF;                                                                                         000000     009000
+009100     *IN32 = *OFF;                                                                                         000000     009100
+009200  /END-FREE                                                                                                000000     009200
+009300 P DisplayList     E                                                                                       000000     009300
+009400                                                                                                           000000     009400
+009500  *================================================================                                        000000     009500
+009600  * Procedura ProcessOptions - Przetwarzanie opcji                                                         000000     009600
+009700  *================================================================                                        000000     009700
+009800 P ProcessOptions  B                                                                                       000000     009800
+009900 D ProcessOptions  PI                                                                                      000000     009900
+010000 D I               S              4P 0                                                                     000000     010000
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      7
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+010100                                                                                                           000000     010100
+010200  /FREE                                                                                                    000000     010200
+010300     For I = 1 to RRN;                                                                           B01       000000     010300
+010400        CHAIN I SFL;                                                                              01       000000     010400
+010500        If SFOPT <> '';                                                                          B02       000000     010500
+010600           Select;                                                                               B03       000000     010600
+010700              When SFOPT = '4';  // Delete                                                       X03       000000     010700
+010800                 DeleteInstrument(SFISIN);                                                        03       000000     010800
+010900              Other;                                                                             X03       000000     010900
+011000                 // Nieznana opcja - ignoruj                                                               000000     011000
+011100           Endsl;                                                                                E03       000000     011100
+011200           SFOPT = '';                                                                            02       000000     011200
+011300           UPDATE SFL;                                                                            02       000000     011300
+011400        Endif;                                                                                   E02       000000     011400
+011500     Endfor;                                                                                     E01       000000     011500
+011600  /END-FREE                                                                                                000000     011600
+011700 P ProcessOptions  E                                                                                       000000     011700
+011800                                                                                                           000000     011800
+011900  *================================================================                                        000000     011900
+012000  * Procedura AddInstrument - Dodawanie instrumentu                                                        000000     012000
+012100  *================================================================                                        000000     012100
+012200 P AddInstrument   B                                                                                       000000     012200
+012300 D AddInstrument   PI                                                                                      000000     012300
+012400 D VALIDOK         S               N                                                                       000000     012400
+012500                                                                                                           000000     012500
+012600  /FREE                                                                                                    000000     012600
+012700     MODE = 'DODAWANIE';                                                                                   000000     012700
+012800     ISINDS = ' ';  // Normalne wyświetlanie                                                               000000     012800
+012900     ISIN = '';                                                                                            000000     012900
+013000     SHORTNM = '';                                                                                         000000     013000
+013100     EMITENT = '';                                                                                         000000     013100
+013200     ISSUEDT = D'0001-01-01';                                                                              000000     013200
+013300     COUNTRY = '';                                                                                         000000     013300
+013400     CURRENCY = '';                                                                                        000000     013400
+013500     ISSUESZ = 0;                                                                                          000000     013500
+013600     ERRMSG = '';                                                                                          000000     013600
+013700                                                                                                           000000     013700
+013800     Dow '1';                                                                                    B01       000000     013800
+013900        EXFMT MNTSCR;                                                                             01       000000     013900
+014000                                                                                                           000000     014000
+014100        If *IN03 or *IN12;  // F3 lub F12=Anuluj                                                 B02       000000     014100
+014200           Leave;                                                                                 02       000000     014200
+014300        Endif;                                                                                   E02       000000     014300
+014400                                                                                                           000000     014400
+014500        // Walidacja                                                                                       000000     014500
+014600        VALIDOK = ValidateInstrument();                                                           01       000000     014600
+014700                                                                                                           000000     014700
+014800        If VALIDOK;                                                                              B02       000000     014800
+014900           WRITE INSTREC;                                                                         02       000000     014900
+015000           Leave;                                                                                 02       000000     015000
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      8
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+015100        Endif;                                                                                   E02       000000     015100
+015200     Enddo;                                                                                      E01       000000     015200
+015300  /END-FREE                                                                                                000000     015300
+015400 P AddInstrument   E                                                                                       000000     015400
+015500                                                                                                           000000     015500
+015600  *================================================================                                        000000     015600
+015700  * Procedura DeleteInstrument - Usuwanie instrumentu                                                      000000     015700
+015800  *================================================================                                        000000     015800
+015900 P DeleteInstrument B                                                                                      000000     015900
+======>                aacbbbbbbbbbbbbbbbbbbb
+*RNF1508 20 a      015900  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1508 20 b      015900  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1501 20 c      015900  The Begin/End entry of the Procedure specification is not
+                           valid.
+016000 D DeleteInstrument PI                                                                                     000000     016000
+======>                bbaaccccccc
+======>  dddddddddddddddd
+*RNF3304 20 a      016000  The Definition-Type entry is not valid; defaults to S.
+*RNF3602 20 b      016000  Entry is not blank for a field definition; defaults to
+                           blanks.
+*RNF3602 20 c      016000  Entry is not blank for a field definition; defaults to
+                           blanks.
+*RNF3438 30 d      016000  LIKE keyword is expected for field DELETEI... but not
+                           found; definition is ignored.
+016100 D   PISIN                       12A   CONST                                                               000000     016100
+======>                  aa
+*RNF3703 20 a      016100  The subfield or parameter definition is not specified
+                           within a group.
+016200                                                                                                           000000     016200
+016300  /FREE                                                                                                    000000     016300
+016400     CHAIN PISIN INSTREC;                                                                                  000000     016400
+016500     If %FOUND(INSTPF);                                                                          B01       000000     016500
+016600        DELETE INSTREC;                                                                           01       000000     016600
+016700     Endif;                                                                                      E01       000000     016700
+016800  /END-FREE                                                                                                000000     016800
+016900 P DeleteInstrument E                                                                                      000000     016900
+======>                aacbbbbbbbbbbbbbbbbbbb
+*RNF1508 20 a      016900  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1508 20 b      016900  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1501 20 c      016900  The Begin/End entry of the Procedure specification is not
+                           valid.
+017000                                                                                                           000000     017000
+017100  *================================================================                                        000000     017100
+017200  * Procedura ValidateInstrument - Walidacja danych instrumentu                                            000000     017200
+017300  *================================================================                                        000000     017300
+017400 P ValidateInstrument B                                                                                    000000     017400
+======>                aacbbbbbbbbbbbbbbbbbbb
+*RNF1508 20 a      017400  Unused positions for the Procedure specification are not
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page      9
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+                           blank; default to blanks.
+*RNF1508 20 b      017400  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1501 20 c      017400  The Begin/End entry of the Procedure specification is not
+                           valid.
+017500 D ValidateInstrument PI          N                                                                        000000     017500
+======>                bbaacccccccddddddd
+*RNF3304 20 a      017500  The Definition-Type entry is not valid; defaults to S.
+*RNF3602 20 b      017500  Entry is not blank for a field definition; defaults to
+                           blanks.
+*RNF3602 20 c      017500  Entry is not blank for a field definition; defaults to
+                           blanks.
+*RNF3402 20 d      017500  Length entry is not valid; defaults to blanks.
+017600                                                                                                           000000     017600
+017700  /FREE                                                                                                    000000     017700
+*RNF3438 30        017500  LIKE keyword is expected for field VALIDAT... but not
+                           found; definition is ignored.
+017800     *IN50 = *OFF;                                                                                         000000     017800
+017900     *IN51 = *OFF;                                                                                         000000     017900
+018000     *IN52 = *OFF;                                                                                         000000     018000
+018100     *IN53 = *OFF;                                                                                         000000     018100
+018200     *IN54 = *OFF;                                                                                         000000     018200
+018300     *IN55 = *OFF;                                                                                         000000     018300
+018400     *IN56 = *OFF;                                                                                         000000     018400
+018500     ERRMSG = '';                                                                                          000000     018500
+018600                                                                                                           000000     018600
+018700     // Walidacja ISIN                                                                                     000000     018700
+018800     If ISIN = '';                                                                               B01       000000     018800
+018900        *IN50 = *ON;                                                                              01       000000     018900
+019000        ERRMSG = 'Kod ISIN jest wymagany';                                                        01       000000     019000
+019100        Return *OFF;                                                                              01       000000     019100
+======>              aaaa
+*RNF5412 20 a      019100  An operand must not be specified for a procedure that does
+                           not return a value.
+019200     Endif;                                                                                      E01       000000     019200
+019300                                                                                                           000000     019300
+019400     // Sprawdź czy ISIN już istnieje                                                                      000000     019400
+019500     CHAIN ISIN INSTREC;                                                                                   000000     019500
+019600     If %FOUND(INSTPF);                                                                          B01       000000     019600
+019700        *IN50 = *ON;                                                                              01       000000     019700
+019800        ERRMSG = 'Kod ISIN już istnieje w słowniku';                                              01       000000     019800
+019900        Return *OFF;                                                                              01       000000     019900
+======>              aaaa
+*RNF5412 20 a      019900  An operand must not be specified for a procedure that does
+                           not return a value.
+020000     Endif;                                                                                      E01       000000     020000
+020100                                                                                                           000000     020100
+020200     // Walidacja nazwy krótkiej                                                                           000000     020200
+020300     If SHORTNM = '';                                                                            B01       000000     020300
+020400        *IN51 = *ON;                                                                              01       000000     020400
+020500        ERRMSG = 'Nazwa krótka jest wymagana';                                                    01       000000     020500
+020600        Return *OFF;                                                                              01       000000     020600
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     10
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+======>              aaaa
+*RNF5412 20 a      020600  An operand must not be specified for a procedure that does
+                           not return a value.
+020700     Endif;                                                                                      E01       000000     020700
+020800                                                                                                           000000     020800
+020900     // Walidacja emitenta                                                                                 000000     020900
+021000     If EMITENT = '';                                                                            B01       000000     021000
+021100        *IN52 = *ON;                                                                              01       000000     021100
+021200        ERRMSG = 'Nazwa emitenta jest wymagana';                                                  01       000000     021200
+021300        Return *OFF;                                                                              01       000000     021300
+======>              aaaa
+*RNF5412 20 a      021300  An operand must not be specified for a procedure that does
+                           not return a value.
+021400     Endif;                                                                                      E01       000000     021400
+021500                                                                                                           000000     021500
+021600     // Walidacja daty emisji                                                                              000000     021600
+021700     If ISSUEDT = D'0001-01-01';                                                                 B01       000000     021700
+021800        *IN53 = *ON;                                                                              01       000000     021800
+021900        ERRMSG = 'Data emisji jest wymagana';                                                     01       000000     021900
+022000        Return *OFF;                                                                              01       000000     022000
+======>              aaaa
+*RNF5412 20 a      022000  An operand must not be specified for a procedure that does
+                           not return a value.
+022100     Endif;                                                                                      E01       000000     022100
+022200                                                                                                           000000     022200
+022300     // Walidacja kraju                                                                                    000000     022300
+022400     If COUNTRY = '';                                                                            B01       000000     022400
+022500        *IN54 = *ON;                                                                              01       000000     022500
+022600        ERRMSG = 'Kraj emisji jest wymagany';                                                     01       000000     022600
+022700        Return *OFF;                                                                              01       000000     022700
+======>              aaaa
+*RNF5412 20 a      022700  An operand must not be specified for a procedure that does
+                           not return a value.
+022800     Endif;                                                                                      E01       000000     022800
+022900                                                                                                           000000     022900
+023000     // Walidacja waluty                                                                                   000000     023000
+023100     If CURRENCY = '';                                                                           B01       000000     023100
+023200        *IN55 = *ON;                                                                              01       000000     023200
+023300        ERRMSG = 'Waluta emisji jest wymagana';                                                   01       000000     023300
+023400        Return *OFF;                                                                              01       000000     023400
+======>              aaaa
+*RNF5412 20 a      023400  An operand must not be specified for a procedure that does
+                           not return a value.
+023500     Endif;                                                                                      E01       000000     023500
+023600                                                                                                           000000     023600
+023700     // Walidacja wielkości emisji                                                                         000000     023700
+023800     If ISSUESZ <= 0;                                                                            B01       000000     023800
+023900        *IN56 = *ON;                                                                              01       000000     023900
+024000        ERRMSG = 'Wielkość emisji musi być większa od zera';                                      01       000000     024000
+024100        Return *OFF;                                                                              01       000000     024100
+======>              aaaa
+*RNF5412 20 a      024100  An operand must not be specified for a procedure that does
+                           not return a value.
+024200     Endif;                                                                                      E01       000000     024200
+024300                                                                                                           000000     024300
+024400     Return *ON;                                                                                           000000     024400
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     11
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+======>           aaa
+*RNF5412 20 a      024400  An operand must not be specified for a procedure that does
+                           not return a value.
+024500  /END-FREE                                                                                                000000     024500
+024600 P ValidateInstrument E                                                                                    000000     024600
+======>                aacbbbbbbbbbbbbbbbbbbb
+*RNF1508 20 a      024600  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1508 20 b      024600  Unused positions for the Procedure specification are not
+                           blank; default to blanks.
+*RNF1501 20 c      024600  The Begin/End entry of the Procedure specification is not
+                           valid.
+       * * * * *   E N D   O F   S O U R C E   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     12
+          A d d i t i o n a l   D i a g n o s t i c   M e s s a g e s
+ Msg id  Sv   Statement    Message text
+*RNF7030 30        016000  The name or indicator DELETEI... is not defined.
+*RNF7030 30        010800  The name or indicator DELETEI... is not defined.
+*RNF7066 00        001000  Record-Format FOOTER not used for input or output.
+*RNF7066 00        001000  Record-Format HEADER not used for input or output.
+*RNF7089 00        001000  RPG provides Separate-Indicator area for file INSTDSPF.
+*RNF7089 00        001200  RPG provides Separate-Indicator area for file INSTMNT.
+*RNF7030 30        012800  The name or indicator ISINDS is not defined.
+*RNF7030 30        017500  The name or indicator VALIDAT... is not defined.
+*RNF7030 30        014600  The name or indicator VALIDAT... is not defined.
+*RNF7503 30        010800  Expression contains an operand that is not defined.
+*RNF7503 30        012800  Expression contains an operand that is not defined.
+*RNF7503 30        014600  Expression contains an operand that is not defined.
+*RNF5197 30        014900  File in Factor 2 does not have allowed file type for WRITE
+                           operation.
+*RNF5198 30        016600  File in Factor 2 is not allowed for UPDATE or DELETE
+                           operation.
+ * * * * *   E N D   O F   A D D I T I O N A L   D I A G N O S T I C   M E S S A G E S   * * * * *
+                 O u t p u t   B u f f e r   P o s i t i o n s
+Line   Start End   Field or Constant
+Number Pos   Pos
+   9000002     1     1 SFOPT
+   9000003     2    13 SFISIN
+   9000004    14    31 SFSHORT
+   9000005    32    47 SFEMIT
+   9000006    48    57 SFISSDT
+   9000007    58    59 SFCNTRY
+   9000008    60    62 SFCURR
+   9000009    63    71 SFSIZE
+   9000002     1     1 SFOPT
+   9000003     2    13 SFISIN
+   9000004    14    31 SFSHORT
+   9000005    32    47 SFEMIT
+   9000006    48    57 SFISSDT
+   9000007    58    59 SFCNTRY
+   9000008    60    62 SFCURR
+   9000009    63    71 SFSIZE
+  10000002     1     1 DUMMY
+  10000002     1     1 DUMMY
+  11000002     1    10 MODE
+  11000003    11    22 ISIN
+  11000004    23    62 SHORTNM
+  11000005    63   122 EMITENT
+  11000006   123   132 ISSUEDT
+  11000007   133   134 COUNTRY
+  11000008   135   137 CURRENCY
+  11000009   138   152 ISSUESZ
+  11000010   153   230 ERRMSG
+ * * * * *   E N D   O F   O U T P U T   B U F F E R   P O S I T I O N   *  * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     13
+                    K e y   F i e l d   I n f o r m a t i o n
+         File           Internal    External
+           Record       field name  field name  Attributes
+      1  INSTLF
+           INSTREC
+                        ISIN                    CHAR       12
+ * * * * *   E N D   O F   K E Y   F I E L D   I N F O R M A T I O N   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     14
+                          C r o s s   R e f e r e n c e
+      File and Record References:
+         File              Device             References (D=Defined)
+           Record
+         INSTDSPF          WORKSTN                001000D
+           HEADER                                 001000D    2000001     7000001
+           FOOTER                                 001000D    3000001     8000001
+           SFL                                    001000D    4000001     9000001      006800
+                                                  010400      011300
+           SFLCTL                                 001000D    5000001    10000001      004700
+                                                  008800
+         INSTLF            DISK                   000800D     005600
+           INSTREC                                000800D     000900D    1000001      005100
+                                                  005500      014900      016400      016600
+                                                  019500
+         INSTMNT           WORKSTN                001200D
+           MNTSCR                                 001200D    6000001    11000001      013900
+         INSTPF            DISK                   000900D     016500      019600
+      Global Field References:
+         Field             Attributes         References (D=Defined M=Modified)
+         *INLR             N(1)                   003500M
+         *IN03             N(1)                   002600      014100
+         *IN06             N(1)                   002800
+         *IN12             N(1)                   014100
+         *IN31             N(1)                   008500M     009000M
+         *IN32             N(1)                   008600M     009100M
+         *IN33             N(1)                   004600M     004800M
+         *IN34             N(1)                   007300M
+         *IN50             N(1)                   017800M     018900M     019700M
+         *IN51             N(1)                   017900M     020400M
+         *IN52             N(1)                   018000M     021100M
+         *IN53             N(1)                   018100M     021800M
+         *IN54             N(1)                   018200M     022500M
+         *IN55             N(1)                   018300M     023200M
+         *IN56             N(1)                   018400M     023900M
+*RNF7031 ACTION            A(1)                   001600D
+         ADDINSTRUMENT     PROTOTYPE              002900M     012200      012300      015400
+         COUNTRY           A(2)                  1000006M    6000006M   11000007      006500
+                                                  013300M     022400
+         CURRENCY          A(3)                  1000007M    6000007M   11000008      006600
+                                                  013400M     023100
+         DELETEINSTRUME    PROTOTYPE              015900      016900
+*RNF7030 DELETEINSTRUMENT  **UNDEF**              010800M
+         DISPLAYLIST       PROTOTYPE              002300M     008100      008200      009300
+         DUMMY             A(1)                  5000002M   10000002
+         EMITENT           A(60)                 1000004M    6000004M   11000005      006300
+                                                  013100M     021000
+         EOF               N(1)                   001700D     005200M     005400      005700M
+         ERRMSG            A(78)                11000010      013600M     018500M     019000M
+                                                  019800M     020500M     021200M     021900M
+                                                  022600M     023300M     024000M
+         ISIN              A(12)                 1000002M    6000002M   11000003      006100
+                                                  012900M     018800      019500
+*RNF7030 ISINDS            **UNDEF**              012800M
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     15
+         ISSUEDT           D(10*ISO-)            1000005M    6000005M   11000006      006400
+                                                  013200M     021700
+         ISSUESZ           P(15,2)               1000008M    6000008M   11000009      006700
+                                                  013500M     023800
+*RNF7031 LASTKEY           A(12)                  001500D
+         LOADSUBFILE       PROTOTYPE              002200M     004200      004300      007600
+         MODE              A(10)                11000002      012700M
+         PROCESSOPTIONS    PROTOTYPE              003100M     009800      009900      011700
+         RRN               P(4,0)                 001100      001400D     005000M     005900M
+                                                  005900      007200      008500      010300
+         SFCNTRY           A(2)                  4000007M    9000007      006500M
+         SFCURR            A(3)                  4000008M    9000008      006600M
+         SFEMIT            A(16)                 4000005M    9000005      006300M
+         SFISIN            A(12)                 4000003M    9000003      006100M     010800
+         SFISSDT           A(10)                 4000006M    9000006      006400M
+         SFOPT             A(1)                  4000002M    9000002      006000M     010500
+                                                  010700      011200M
+         SFSHORT           A(18)                 4000004M    9000004      006200M
+         SFSIZE            P(9,2)                4000009M    9000009      006700M
+         SHORTNM           A(40)                 1000003M    6000003M   11000004      006200
+                                                  013000M     020300
+         VALIDATEINSTRU    PROTOTYPE              017400      024600
+*RNF7030 VALIDATEINSTRUMENT...
+                           **UNDEF**              014600
+      Field References for subprocedure LOADSUBFILE
+         Field             Attributes         References (D=Defined M=Modified)
+         No references in the source.
+      Field References for subprocedure DISPLAYLIST
+         Field             Attributes         References (D=Defined M=Modified)
+         No references in the source.
+      Field References for subprocedure PROCESSOPTIONS
+         Field             Attributes         References (D=Defined M=Modified)
+         I                 P(4,0)                 010000D     010300      010400
+      Field References for subprocedure ADDINSTRUMENT
+         Field             Attributes         References (D=Defined M=Modified)
+         VALIDOK           N(1)                   012400D     014600M     014800
+      Field References for subprocedure DELETEINSTRUME
+         Field             Attributes         References (D=Defined M=Modified)
+*RNF7030 DELETEINSTRUME    **UNDEF**              016000D
+         PISIN             A(12)                  016100D     016400
+      Field References for subprocedure VALIDATEINSTRU
+         Field             Attributes         References (D=Defined M=Modified)
+*RNF7030 VALIDATEINSTRU    **UNDEF**              017500D
+      Indicator References:
+         Indicator                            References (D=Defined M=Modified)
+         03                                      2000001D    3000001D    4000001D    5000001D
+                                                 6000001D     002600      014100
+         06                                      2000001D    3000001D    4000001D    5000001D
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     16
+                                                  002800
+         12                                      6000001D     014100
+         31                                      5000001D     008500M     009000M
+         32                                      5000001D     008600M     009100M
+         33                                      5000001D     004600M     004800M
+         34                                      5000001D     007300M
+         50                                      6000001D     017800M     018900M     019700M
+         51                                      6000001D     017900M     020400M
+         52                                      6000001D     018000M     021100M
+         53                                      6000001D     018100M     021800M
+         54                                      6000001D     018200M     022500M
+         55                                      6000001D     018300M     023200M
+         56                                      6000001D     018400M     023900M
+         LR                                       003500M
+       * * * * *   E N D   O F   C R O S S   R E F E R E N C E   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     17
+                      E x t e r n a l   R e f e r e n c e s
+      Statically bound procedures:
+         Procedure                            References
+         No references in the source.
+      Imported fields:
+         Field             Attributes         Defined
+         No references in the source.
+      Exported fields:
+         Field             Attributes         Defined
+         No references in the source.
+   * * * * *   E N D   O F   E X T E R N A L   R E F E R E N C E S   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     18
+                          M e s s a g e   S u m m a r y
+ Msg id  Sv Number Message text
+*RNF7031 00      2 The name or indicator is not referenced.
+*RNF7066 00      2 Record-Format name of Externally-Described file is not used.
+*RNF7089 00      2 RPG provides Separate-Indicator area for file.
+*RNF1501 20      4 The Begin/End entry of the Procedure specification is not
+                   valid.
+*RNF1508 20      8 Unused positions for the Procedure specification are not
+                   blank; default to blanks.
+*RNF3304 20      2 The Definition-Type entry is not valid; defaults to S.
+*RNF3402 20      1 Length entry is not valid; defaults to blanks.
+*RNF3602 20      4 Entry is not blank for a field definition; defaults to
+                   blanks.
+*RNF3703 20      1 The subfield or parameter definition is not specified within
+                   a group.
+*RNF5412 20      9 An operand must not be specified for a procedure that does
+                   not return a value.
+*RNF2121 30      1 Record-format name in externally-described file already
+                   defined; record format ignored.
+*RNF3438 30      2 LIKE keyword is expected but not found; definition is
+                   ignored.
+*RNF5197 30      1 File in Factor 2 does not have allowed file type for WRITE
+                   operation.
+*RNF5198 30      1 File in Factor 2 is not allowed for UPDATE or DELETE
+                   operation.
+*RNF7030 30      5 The name or indicator is not defined.
+*RNF7503 30      3 Expression contains an operand that is not defined.
+*RNF2109 40      1 All Record Formats for externally-described file ignored or
+                   dropped due to error; File ignored.
+       * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    14/01/26 21:50:27        Page     19
+                            F i n a l   S u m m a r y
+  Message Totals:
+    Information  (00) . . . . . . . :        6
+    Warning      (10) . . . . . . . :        0
+    Error        (20) . . . . . . . :       29
+    Severe Error (30+)  . . . . . . :       14
+    ---------------------------------  -------
+    Total . . . . . . . . . . . . . :       49
+  Source Totals:
+    Records . . . . . . . . . . . . :      298
+    Specifications  . . . . . . . . :      204
+    Data records  . . . . . . . . . :        0
+    Comments  . . . . . . . . . . . :       32
+         * * * * *   E N D   O F   F I N A L   S U M M A R Y   * * * * *
+Compilation stopped. Severity 40 errors found in program.
+          * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
+                                                   ***       KDPW S.A.       ***
+make: *** [Makefile:106: programs] Error 1
