@@ -11,9 +11,8 @@
      A                                      DSPATR(HI)
      A            MODE          10A  O  1 70
      A                                  3  2'Kod ISIN . . . . . . :'
-     A            ISIN          12A  B  3 28DSPATR(&ISINDS)
+     A            ISIN          12A  B  3 28
      A  50                                  DSPATR(PR)
-     A            ISINDS         1A  H
      A                                  5  2'Nazwa krótka . . . . :'
      A            SHORTNM       40A  B  5 28
      A  51                                  DSPATR(PR)
