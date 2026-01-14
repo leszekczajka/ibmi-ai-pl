@@ -3,14 +3,14 @@ CPC2196: Library IBMIAI added to library list.
   Kompilacja INSTDSPF...
 CPF7311: Errors in DDS not allowed with specified GENLVL.
 CPF7302: File INSTDSPF not created in library IBMIAI.
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    1
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    1
  File name . . . . . . . . . . . . . . . . . . . . . :   INSTDSPF
    Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
  File attribute  . . . . . . . . . . . . . . . . . . :   Display
  Source file containing DDS  . . . . . . . . . . . . :   QDDSSRC
    Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
  Source member containing DDS  . . . . . . . . . . . :   INSTDSPF
- Source member last changed  . . . . . . . . . . . . :   14/01/26  21:20:07
+ Source member last changed  . . . . . . . . . . . . :   14/01/26  21:45:10
  Source listing options  . . . . . . . . . . . . . . :   *SOURCE    *LIST      *NOSECLVL  *NOEVENTF
  DDS generation severity level . . . . . . . . . . . :   20
  DDS flagging severity level . . . . . . . . . . . . :   00
@@ -33,40 +33,39 @@ CPF7302: File INSTDSPF not created in library IBMIAI.
    1100       A                                  1  2'Słownik instrumentów finansowych'
    1200       A                                      DSPATR(HI)
    1300       A                                  2  2'Opcja i kod ISIN'
-   1400       A                                  3  2'    Nazwa                  -
-   1500       A                                      Emitent              Dt.em.  -
-   1600       A                                      Kr Wal  Wlk.emisji'
+   1400       A                                  3  2'  Kod ISIN    Nazwa          -
+   1500       A                                      Emitent         Data em. Kr Wal -
+   1600       A                                       Wlk.em.'
    1700       A          R FOOTER
    1800       A                                      OVERLAY
    1900       A                                 23  2'F3=Exit   F6=Dodaj'
    2000       A                                      COLOR(BLU)
    2100       A          R SFL                       SFL
    2200       A            SFOPT          1A  B  4  2VALUES(' ' '4')
-   2300       A            SFISIN        12A  O  4  6
-   2400       A            SFSHORT       20A  O  4 20
-   2500       A            SFEMIT        20A  O  4 41
-   2600       A            SFISSDT         L  O  4 62EDTCDE(Y)
+   2300       A            SFISIN        12A  O  4  4
+   2400       A            SFSHORT       20A  O  4 17
+   2500       A            SFEMIT        18A  O  4 38
+   2600       A            SFISSDT        8S 0O  4 57DATFMT(*ISO)
 *                                            CPD7554-*
-   2700       A            SFCNTRY        2A  O  4 71
+   2700       A            SFCNTRY        2A  O  4 66
 *                                      CPD7866-******
-   2800       A            SFCURR         3A  O  4 74
-   2900       A            SFSIZE        11Y 2O  4 78EDTCDE(1)
+   2800       A            SFCURR         3A  O  4 69
+   2900       A            SFSIZE         9Y 2O  4 73EDTCDE(1)
    3000       A          R SFLCTL                    SFLCTL(SFL)
    3100       A                                      SFLSIZ(9999)
-   3200       A                                      SFLPAG(0014)
-*                                            CPD7817-*
+   3200       A                                      SFLPAG(0010)
    3300       A  31                                  SFLDSP
    3400       A  32                                  SFLDSPCTL
    3500       A  33                                  SFLCLR
+   3600       A  34                                  SFLEND(*MORE)
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    2
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    2
                                       Data Description Source
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
-   3600       A  34                                  SFLEND(*MORE)
    3700       A            DUMMY          1A  H
                          * * * * *   E N D   O F   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    3
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    3
                                           Expanded Source
                                                                                           Field       Buffer position
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8 length        Out     In
@@ -78,27 +77,49 @@ CPF7302: File INSTDSPF not created in library IBMIAI.
    1100                                          1  2'Słownik instrumentów finansowych' +    32
    1200                                              DSPATR(HI)
    1300                                          2  2'Opcja i kod ISIN'                      16
-   1400                                          3  2'    Nazwa                  Emitent-    74
-   1400                                                            Dt.em.  Kr Wal  Wlk.e-
-   1400                                              misji'
+   1400                                          3  2'  Kod ISIN    Nazwa          Emite-    69
+   1400                                              nt         Data em. Kr Wal  Wlk.em.-
+   1400                                              '
                * Indicator Area:
                *  *IN03        *IN06
    1700                  R FOOTER                    OVERLAY
    1900                                         23  2'F3=Exit   F6=Dodaj' COLOR(BLU)         18
+               * Indicator Area:
+               *  *IN03        *IN06
+   2100                  R SFL                       SFL
+   2200                    SFOPT          1A  B  4  2VALUES(' ' '4')                          1            1       1
+   2300                    SFISIN        12A  O  4  4                                        12            2       2
+   2400                    SFSHORT       20A  O  4 17                                        20           14      14
+   2500                    SFEMIT        18A  O  4 38                                        18           34      34
+   2600                    SFISSDT       10S 0O  4 57                                        10           52      52
+   2700                    SFCNTRY        2A  O  4 66                                         2           62      62
+   2800                    SFCURR         3A  O  4 69                                         3           64      64
+   2900                    SFSIZE         9Y 2O  4 73EDTCDE(1)                                9           67      67
+               * Indicator Area:
+               *  *IN31        *IN32        *IN33        *IN34
+               * Indicator Area:
+               *  *IN03        *IN06
+   3000                  R SFLCTL
+                 *DS3                                SFLSIZ(9999) SFLPAG(010)
+   3000                                              SFLCTL(SFL)
+   3300          31                                  SFLDSP
+   3400          32                                  SFLDSPCTL
+   3500          33                                  SFLCLR
+   3600          34                                  SFLEND(*MORE)
+   3700                    DUMMY          1A  H                                               1            1       1
                  * * * * *   E N D   O F   E X P A N D E D   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    4
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    4
                                              Messages
     ID      Severity  Number
 * CPD7554      20        1      Message . . . . :   Keyword not valid with data type or keyboard shift value.
-* CPD7817      30        1      Message . . . . :   Value on SFLPAG keyword too large for display size.
 * CPD7866      10        1      Message . . . . :   Field overlaps another field with no conditions specified.
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    5
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:45:11        Page    5
                                           Message Summary
     Total          Informational          Warning        Error       Severe
                        (0-9)              (10-19)       (20-29)      (30-99)
-        3                 0                    1             1            1
+        2                 0                    1             1            0
 * CPF7302      40               Message . . . . :   File INSTDSPF not created in library IBMIAI.
                          * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
                                                    ***       KDPW S.A.       ***
