@@ -1,149 +1,105 @@
--bash-5.2$ make rebuild
-Usuwanie biblioteki IBMIAI...
-system "DLTLIB LIB(IBMIAI)" 2>/dev/null || true
-CPC2194: Library IBMIAI deleted.
-Czyszczenie zakończone.
-Tworzenie biblioteki IBMIAI...
-system "CRTLIB LIB(IBMIAI) TEXT('Słownik instrumentów finansowych')" 2>/dev/null || true
-CPC2102: Library IBMIAI created.
-Tworzenie plików źródłowych...
-system "CRTSRCPF FILE(IBMIAI/QDDSSRC) RCDLEN(112) TEXT('DDS Source File')" 2>/dev/null || true
-CPC7301: File QDDSSRC created in library IBMIAI.
-system "CRTSRCPF FILE(IBMIAI/QRPGLESRC) RCDLEN(112) TEXT('RPG Source File')" 2>/dev/null || true
-CPC7301: File QRPGLESRC created in library IBMIAI.
-Kopiowanie źródeł DDS...
-  Kopiowanie INSTPF...
-CPCA081: Stream file copied to object.
-  Kopiowanie INSTLF...
-CPCA081: Stream file copied to object.
-  Kopiowanie INSTDSPF...
-CPCA081: Stream file copied to object.
-  Kopiowanie INSTMNT...
-CPCA081: Stream file copied to object.
-Kopiowanie źródeł RPG...
-  Kopiowanie INSTMGR...
-CPCA081: Stream file copied to object.
-Setup zakończony.
-Kompilacja plików fizycznych...
-  Kompilacja INSTPF...
-CPC7301: File INSTPF created in library IBMIAI.
-CPC7305: Member INSTPF added to file INSTPF in IBMIAI.
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTPF            2/01/26 21:03:52        Page    1
- File name . . . . . . . . . . . . . . . . . . . . . :   INSTPF
-   Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- File attribute  . . . . . . . . . . . . . . . . . . :   Physical
- Source file containing DDS  . . . . . . . . . . . . :   QDDSSRC
-   Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- Source member containing DDS  . . . . . . . . . . . :   INSTPF
- Source member last changed  . . . . . . . . . . . . :   14/01/26  21:03:51
- Source listing options  . . . . . . . . . . . . . . :   *SOURCE    *LIST      *NOSECLVL  *NOEVENTF
- DDS generation severity level . . . . . . . . . . . :   20
- DDS flagging severity level . . . . . . . . . . . . :   00
- File type . . . . . . . . . . . . . . . . . . . . . :   *DATA
- Authority . . . . . . . . . . . . . . . . . . . . . :   *LIBCRTAUT
- Replace file  . . . . . . . . . . . . . . . . . . . :   *NO
- Text  . . . . . . . . . . . . . . . . . . . . . . . :
- Compiler  . . . . . . . . . . . . . . . . . . . . . :   IBM System i5 Data Description Processor
-                                      Data Description Source
- SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
-    100       A* ================================================================
-    200       A* Plik fizyczny INSTPF - Słownik instrumentów finansowych
-    300       A* ================================================================
-    400       A          R INSTREC
-    500       A            ISIN          12A         COLHDG('Kod ISIN')
-    600       A                                      TEXT('Kod ISIN instrumentu')
-    700       A            SHORTNM       40A         COLHDG('Nazwa krótka')
-    800       A                                      TEXT('Nazwa krótka instrumentu')
-    900       A            EMITENT       60A         COLHDG('Emitent')
-   1000       A                                      TEXT('Nazwa emitenta')
-   1100       A            ISSUEDT         L         COLHDG('Data emisji')
-   1200       A                                      TEXT('Data emisji')
-   1300       A            COUNTRY        2A         COLHDG('Kraj')
-   1400       A                                      TEXT('Kraj emisji (kod ISO)')
-   1500       A            CURRENCY       3A         COLHDG('Waluta')
-   1600       A                                      TEXT('Waluta emisji (kod ISO)')
-   1700       A            ISSUESZ       15P 2       COLHDG('Wielkość emisji')
-   1800       A                                      TEXT('Wielkość emisji')
-   1900       A          K ISIN
-                         * * * * *   E N D   O F   S O U R C E   * * * * *
-                                                   ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTPF            2/01/26 21:03:52        Page    2
-                                          Expanded Source
-                                                                                          Field       Buffer position
- SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8 length        Out     In
-    400                  R INSTREC
-    500                    ISIN          12A  B      COLHDG('Kod ISIN') +                    12            1       1
-    600                                              TEXT('Kod ISIN instrumentu')
-    700                    SHORTNM       40A  B      COLHDG('Nazwa krótka') +                40           13      13
-    800                                              TEXT('Nazwa krótka instrumentu')
-    900                    EMITENT       60A  B      COLHDG('Emitent') +                     60           53      53
-   1000                                              TEXT('Nazwa emitenta')
-   1100                    ISSUEDT       10L  B      COLHDG('Data emisji') +                 10          113     113
-   1200                                              TEXT('Data emisji')
-   1300                    COUNTRY        2A  B      COLHDG('Kraj') +                         2          123     123
-   1400                                              TEXT('Kraj emisji (kod ISO)')
-   1500                    CURRENCY       3A  B      COLHDG('Waluta') +                       3          125     125
-   1600                                              TEXT('Waluta emisji (kod ISO)')
-   1700                    ISSUESZ       15P 2B      COLHDG('Wielkość emisji') +              8          128     128
-   1800                                              TEXT('Wielkość emisji')
-   1900                  K ISIN
-                 * * * * *   E N D   O F   E X P A N D E D   S O U R C E   * * * * *
-                                                   ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTPF            2/01/26 21:03:52        Page    3
-                                          Message Summary
-    Total          Informational          Warning        Error       Severe
-                       (0-9)              (10-19)       (20-29)      (30-99)
-        0                 0                    0             0            0
-* CPC7301      00               Message . . . . :   File INSTPF created in library IBMIAI.
-                         * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
-                                                   ***       KDPW S.A.       ***
-Kompilacja plików logicznych...
-  Kompilacja INSTLF...
+Kompilacja display files...
+CPC2196: Library IBMIAI added to library list.
+  Kompilacja INSTDSPF...
 CPF7311: Errors in DDS not allowed with specified GENLVL.
-CPF7302: File INSTLF not created in library IBMIAI.
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTLF            2/01/26 21:03:52        Page    1
- File name . . . . . . . . . . . . . . . . . . . . . :   INSTLF
+CPF7302: File INSTDSPF not created in library IBMIAI.
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    1
+ File name . . . . . . . . . . . . . . . . . . . . . :   INSTDSPF
    Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- File attribute  . . . . . . . . . . . . . . . . . . :   Logical
+ File attribute  . . . . . . . . . . . . . . . . . . :   Display
  Source file containing DDS  . . . . . . . . . . . . :   QDDSSRC
    Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI
- Source member containing DDS  . . . . . . . . . . . :   INSTLF
- Source member last changed  . . . . . . . . . . . . :   14/01/26  21:03:51
+ Source member containing DDS  . . . . . . . . . . . :   INSTDSPF
+ Source member last changed  . . . . . . . . . . . . :   14/01/26  21:20:07
  Source listing options  . . . . . . . . . . . . . . :   *SOURCE    *LIST      *NOSECLVL  *NOEVENTF
  DDS generation severity level . . . . . . . . . . . :   20
  DDS flagging severity level . . . . . . . . . . . . :   00
- File type . . . . . . . . . . . . . . . . . . . . . :   *DATA
  Authority . . . . . . . . . . . . . . . . . . . . . :   *LIBCRTAUT
- Replace file  . . . . . . . . . . . . . . . . . . . :   *NO
+ Replace file  . . . . . . . . . . . . . . . . . . . :   *YES
  Text  . . . . . . . . . . . . . . . . . . . . . . . :
  Compiler  . . . . . . . . . . . . . . . . . . . . . :   IBM System i5 Data Description Processor
                                       Data Description Source
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
     100       A* ================================================================
-    200       A* Plik logiczny INSTLF - Sortowanie po kodzie ISIN
+    200       A* Display File INSTDSPF - Wyświetlanie listy instrumentów
     300       A* ================================================================
-    400       A          R INSTREC                   PFILE(INSTPF)
-*                                                  CPD7902-*
-    500       A          K ISIN
+    400       A                                      DSPSIZ(24 80 *DS3)
+    500       A                                      PRINT
+    600       A                                      INDARA
+    700       A                                      CA03(03 'Exit')
+    800       A                                      CA06(06 'Dodaj')
+    900       A          R HEADER
+   1000       A                                      OVERLAY
+   1100       A                                  1  2'Słownik instrumentów finansowych'
+   1200       A                                      DSPATR(HI)
+   1300       A                                  2  2'Opcja i kod ISIN'
+   1400       A                                  3  2'    Nazwa                  -
+   1500       A                                      Emitent              Dt.em.  -
+   1600       A                                      Kr Wal  Wlk.emisji'
+   1700       A          R FOOTER
+   1800       A                                      OVERLAY
+   1900       A                                 23  2'F3=Exit   F6=Dodaj'
+   2000       A                                      COLOR(BLU)
+   2100       A          R SFL                       SFL
+   2200       A            SFOPT          1A  B  4  2VALUES(' ' '4')
+   2300       A            SFISIN        12A  O  4  6
+   2400       A            SFSHORT       20A  O  4 20
+   2500       A            SFEMIT        20A  O  4 41
+   2600       A            SFISSDT         L  O  4 62EDTCDE(Y)
+*                                            CPD7554-*
+   2700       A            SFCNTRY        2A  O  4 71
+*                                      CPD7866-******
+   2800       A            SFCURR         3A  O  4 74
+   2900       A            SFSIZE        11Y 2O  4 78EDTCDE(1)
+   3000       A          R SFLCTL                    SFLCTL(SFL)
+   3100       A                                      SFLSIZ(9999)
+   3200       A                                      SFLPAG(0014)
+*                                            CPD7817-*
+   3300       A  31                                  SFLDSP
+   3400       A  32                                  SFLDSPCTL
+   3500       A  33                                  SFLCLR
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    2
+                                      Data Description Source
+ SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
+   3600       A  34                                  SFLEND(*MORE)
+   3700       A            DUMMY          1A  H
                          * * * * *   E N D   O F   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTLF            2/01/26 21:03:52        Page    2
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    3
                                           Expanded Source
                                                                                           Field       Buffer position
  SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8 length        Out     In
+    400                                              DSPSIZ(24 80 *DS3) PRINT INDARA +
+    700                                              CA03(03 'Exit') CA06(06 'Dodaj')
+               * Indicator Area:
+               *  *IN03        *IN06
+    900                  R HEADER                    OVERLAY
+   1100                                          1  2'Słownik instrumentów finansowych' +    32
+   1200                                              DSPATR(HI)
+   1300                                          2  2'Opcja i kod ISIN'                      16
+   1400                                          3  2'    Nazwa                  Emitent-    74
+   1400                                                            Dt.em.  Kr Wal  Wlk.e-
+   1400                                              misji'
+               * Indicator Area:
+               *  *IN03        *IN06
+   1700                  R FOOTER                    OVERLAY
+   1900                                         23  2'F3=Exit   F6=Dodaj' COLOR(BLU)         18
                  * * * * *   E N D   O F   E X P A N D E D   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTLF            2/01/26 21:03:52        Page    3
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    4
                                              Messages
     ID      Severity  Number
-* CPD7902      30        1      Message . . . . :   File specified on keyword not found.
+* CPD7554      20        1      Message . . . . :   Keyword not valid with data type or keyboard shift value.
+* CPD7817      30        1      Message . . . . :   Value on SFLPAG keyword too large for display size.
+* CPD7866      10        1      Message . . . . :   Field overlaps another field with no conditions specified.
                                                    ***       KDPW S.A.       ***
- 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTLF            2/01/26 21:03:52        Page    4
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI/INSTDSPF          2/01/26 21:20:08        Page    5
                                           Message Summary
     Total          Informational          Warning        Error       Severe
                        (0-9)              (10-19)       (20-29)      (30-99)
-        1                 0                    0             0            1
-* CPF7302      40               Message . . . . :   File INSTLF not created in library IBMIAI.
+        3                 0                    1             1            1
+* CPF7302      40               Message . . . . :   File INSTDSPF not created in library IBMIAI.
                          * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
                                                    ***       KDPW S.A.       ***
-make: *** [Makefile:79: lf] Error 1
+make: *** [Makefile:93: displays] Error 1
