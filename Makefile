@@ -10,6 +10,7 @@
 #   make programs - Kompilacja programów RPG
 # ================================================================
 
+SHELL = /QOpenSys/pkgs/bin/bash
 .ONESHELL:
 
 # Konfiguracja
