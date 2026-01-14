@@ -61,7 +61,7 @@
                SFISIN = ISIN;
                SFSHORT = SHORTNM;
                SFEMIT = EMITENT;
-               SFISSDT = ISSUEDT;
+               SFISSDT = %DEC(%CHAR(ISSUEDT:*ISO0):8:0);
                SFCNTRY = COUNTRY;
                SFCURR = CURRENCY;
                SFSIZE = ISSUESZ;
