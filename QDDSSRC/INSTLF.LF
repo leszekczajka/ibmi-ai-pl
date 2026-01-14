@@ -1,0 +1,5 @@
+     A* ================================================================
+     A* Plik logiczny INSTLF - Sortowanie po kodzie ISIN
+     A* ================================================================
+     A          R INSTREC                   PFILE(INSTPF)
+     A          K ISIN

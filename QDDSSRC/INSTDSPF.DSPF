@@ -1,0 +1,37 @@
+     A* ================================================================
+     A* Display File INSTDSPF - Wyświetlanie listy instrumentów
+     A* ================================================================
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA06(06 'Dodaj')
+     A          R HEADER
+     A                                      OVERLAY
+     A                                  1  2'Słownik instrumentów finansowych'
+     A                                      DSPATR(HI)
+     A                                  2  2'Opcja i kod ISIN'
+     A                                  3  2'    Nazwa                  -
+     A                                      Emitent              Dt.em.  -
+     A                                      Kr Wal  Wlk.emisji'
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 23  2'F3=Exit   F6=Dodaj'
+     A                                      COLOR(BLU)
+     A          R SFL                       SFL
+     A            SFOPT          1A  B  4  2VALUES(' ' '4')
+     A            SFISIN        12A  O  4  6
+     A            SFSHORT       20A  O  4 20
+     A            SFEMIT        20A  O  4 41
+     A            SFISSDT        8Y  O  4 62EDTCDE(Y)
+     A            SFCNTRY        2A  O  4 71
+     A            SFCURR         3A  O  4 74
+     A            SFSIZE        11Y 2O  4 78EDTCDE(1)
+     A          R SFLCTL                    SFLCTL(SFL)
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0014)
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A            DUMMY          1A  H

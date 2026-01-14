@@ -1,0 +1,37 @@
+     A* ================================================================
+     A* Display File INSTMNT - Dodawanie/edycja instrumentu
+     A* ================================================================
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      CA03(03 'Anuluj')
+     A                                      CA12(12 'Anuluj')
+     A          R MNTSCR
+     A                                  1  2'Instrument finansowy'
+     A                                      DSPATR(HI)
+     A            MODE          10A  O  1 70
+     A                                  3  2'Kod ISIN . . . . . . :'
+     A            ISIN          12A  B  3 28DSPATR(&ISINDS)
+     A  50                                  DSPATR(PR)
+     A            ISINDS         1A  H
+     A                                  5  2'Nazwa krótka . . . . :'
+     A            SHORTNM       40A  B  5 28
+     A  51                                  DSPATR(PR)
+     A                                  7  2'Emitent  . . . . . . :'
+     A            EMITENT       60A  B  7 28
+     A  52                                  DSPATR(PR)
+     A                                  9  2'Data emisji  . . . . :'
+     A            ISSUEDT        L  B  9 28EDTCDE(Y)
+     A  53                                  DSPATR(PR)
+     A                                 11  2'Kraj emisji  . . . . :'
+     A            COUNTRY        2A  B 11 28
+     A  54                                  DSPATR(PR)
+     A                                 13  2'Waluta emisji  . . . :'
+     A            CURRENCY       3A  B 13 28
+     A  55                                  DSPATR(PR)
+     A                                 15  2'Wielkość emisji  . . :'
+     A            ISSUESZ       15Y 2B 15 28EDTCDE(1)
+     A  56                                  DSPATR(PR)
+     A                                 20  2'F3=Anuluj   F12=Anuluj'
+     A                                      COLOR(BLU)
+     A            ERRMSG        78A  O 23  2COLOR(RED)

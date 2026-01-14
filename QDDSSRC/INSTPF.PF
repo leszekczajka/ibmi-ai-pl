@@ -1,0 +1,19 @@
+     A* ================================================================
+     A* Plik fizyczny INSTPF - Słownik instrumentów finansowych
+     A* ================================================================
+     A          R INSTREC
+     A            ISIN          12A         COLHDG('Kod ISIN')
+     A                                      TEXT('Kod ISIN instrumentu')
+     A            SHORTNM       40A         COLHDG('Nazwa krótka')
+     A                                      TEXT('Nazwa krótka instrumentu')
+     A            EMITENT       60A         COLHDG('Emitent')
+     A                                      TEXT('Nazwa emitenta')
+     A            ISSUEDT        L         COLHDG('Data emisji')
+     A                                      TEXT('Data emisji')
+     A            COUNTRY        2A         COLHDG('Kraj')
+     A                                      TEXT('Kraj emisji (kod ISO)')
+     A            CURRENCY       3A         COLHDG('Waluta')
+     A                                      TEXT('Waluta emisji (kod ISO)')
+     A            ISSUESZ       15P 2       COLHDG('Wielkość emisji')
+     A                                      TEXT('Wielkość emisji')
+     A          K ISIN
