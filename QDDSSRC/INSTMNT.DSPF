@@ -21,7 +21,7 @@
      A            EMITENT       60A  B  7 28
      A  52                                  DSPATR(PR)
      A                                  9  2'Data emisji  . . . . :'
-     A            ISSUEDT         L  B  9 28EDTCDE(Y)
+     A            ISSUEDT         L  B  9 28DATFMT(*ISO)
      A  53                                  DSPATR(PR)
      A                                 11  2'Kraj emisji  . . . . :'
      A            COUNTRY        2A  B 11 28
