@@ -1,7 +1,10 @@
+-bash-5.2$ make programs
+Kompilacja programów RPG...
+CPC2196: Library IBMIAI added to library list.
   Kompilacja INSTMGR...
 RNS9308: Compilation stopped. Severity 30 errors found in program.
 RNS9310: Compilation failed. Program INSTMGR not created in library IBMIAI.
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      1
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      1
   Command  . . . . . . . . . . . . :   CRTBNDRPG
     Issued by  . . . . . . . . . . :     PG_LESZEK
   Program  . . . . . . . . . . . . :   INSTMGR
@@ -42,7 +45,7 @@ RNS9310: Compilation failed. Program INSTMGR not created in library IBMIAI.
   Preprocessor options . . . . . . :   *NONE
   Require prototype for export . . :   *NO
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      2
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      2
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
                           S o u r c e   L i s t i n g
@@ -97,7 +100,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
         * Record format(s) . . . . . :  INSTPFR          INSTREC                                     *
         *--------------------------------------------------------------------------------------------*
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      3
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      3
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 001000 FINSTDSPF  CF   E             WORKSTN                                                                     000000     001000
@@ -153,7 +156,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
         * RPG record format  . . . . :  HEADER                                                       *                     3
         * External format  . . . . . :  HEADER : IBMIAI/INSTDSPF                                     *                     3
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      4
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      4
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
         *--------------------------------------------------------------------------------------------*                     3
@@ -211,7 +214,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 003600     Return;                                                                                               000000     003600
 003700  /END-FREE                                                                                                000000     003700
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      5
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      5
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 003800                                                                                                           000000     003800
@@ -269,7 +272,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 000004=O                       SHORTNM             62A CHAR       40                                                      13000004
 000005=O                       EMITENT            122A CHAR       60                                                      13000005
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      6
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      6
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 000006=O                       ISSUEDT            132D DATE *ISO- 10                                                      13000006
@@ -321,7 +324,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 008300                                                                                                           000000     008300
 008400  /FREE                                                                                                    000000     008400
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      7
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      7
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 008500     *IN31 = (RRN > 0);  // SFLDSP                                                                         000000     008500
@@ -373,7 +376,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 013100     ISSUEDT = D'0001-01-01';                                                                              000000     013100
 013200     COUNTRY = '';                                                                                         000000     013200
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      8
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      8
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 013300     CURRENCY = '';                                                                                        000000     013300
@@ -425,7 +428,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 017700     *IN50 = *OFF;                                                                                         000000     017700
 017800     *IN51 = *OFF;                                                                                         000000     017800
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page      9
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page      9
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 017900     *IN52 = *OFF;                                                                                         000000     017900
@@ -485,7 +488,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 *RNF5412 20 a      021900  An operand must not be specified for a procedure that does
                            not return a value.
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     10
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     10
 Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
 Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
 022000     Endif;                                                                                      E01       000000     022000
@@ -528,7 +531,7 @@ Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
 024500 P ValidInstr      E                                                                                       000000     024500
        * * * * *   E N D   O F   S O U R C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     11
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     11
           A d d i t i o n a l   D i a g n o s t i c   M e s s a g e s
  Msg id  Sv   Statement    Message text
 *RNF7066 00        001000  Record-Format FOOTER not used for input or output.
@@ -582,11 +585,11 @@ Number Pos   Pos
   13000008   135   137 CURRENCY
   13000009   138   152 ISSUESZ
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     12
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     12
   13000010   153   230 ERRMSG
  * * * * *   E N D   O F   O U T P U T   B U F F E R   P O S I T I O N   *  * * * *
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     13
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     13
                     K e y   F i e l d   I n f o r m a t i o n
          File           Internal    External
            Record       field name  field name  Attributes
@@ -598,7 +601,7 @@ Number Pos   Pos
                         ISIN                    CHAR       12
  * * * * *   E N D   O F   K E Y   F I E L D   I N F O R M A T I O N   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     14
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     14
                           C r o s s   R e f e r e n c e
       File and Record References:
          File              Device             References (D=Defined)
@@ -654,7 +657,7 @@ Number Pos   Pos
                                                   019400
          ISSUEDT           D(10*ISO-)            1000005M    2000005M    7000005M    8000005
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     15
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     15
                                                 13000006      006400      013100M     021600
          ISSUESZ           P(15,2)               1000008M    2000008M    7000008M    8000008
                                                 13000009      006700      013400M     023700
@@ -703,7 +706,7 @@ Number Pos   Pos
          12                                      7000001D     014000
          31                                      6000001D     008500M     009000M
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     16
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     16
          32                                      6000001D     008600M     009100M
          33                                      6000001D     004600M     004800M
          34                                      6000001D     007300M
@@ -717,7 +720,7 @@ Number Pos   Pos
          LR                                       003500M
        * * * * *   E N D   O F   C R O S S   R E F E R E N C E   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     17
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     17
                       E x t e r n a l   R e f e r e n c e s
       Statically bound procedures:
          Procedure                            References
@@ -730,7 +733,7 @@ Number Pos   Pos
          No references in the source.
    * * * * *   E N D   O F   E X T E R N A L   R E F E R E N C E S   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     18
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     18
                           M e s s a g e   S u m m a r y
  Msg id  Sv Number Message text
 *RNF7031 00      2 The name or indicator is not referenced.
@@ -743,7 +746,7 @@ Number Pos   Pos
                    it does not return a value.
        * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *
                                                    ***       KDPW S.A.       ***
- 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:38:59        Page     19
+ 5770WDS V7R5M0  220415 RN        IBM ILE RPG             IBMIAI/INSTMGR           NSDRTST    15/01/26 19:44:06        Page     19
                             F i n a l   S u m m a r y
   Message Totals:
     Information  (00) . . . . . . . :        6
