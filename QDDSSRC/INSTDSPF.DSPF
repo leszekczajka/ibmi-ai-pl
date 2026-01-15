@@ -10,14 +10,13 @@
      A                                      OVERLAY
      A                                  1  2'Słownik instrumentów finansowych'
      A                                      DSPATR(HI)
-     A                                  2  2'F3=Exit   F6=Dodaj'
+     A                                  2  2'Opcja: 4=Usuń'
      A                                      COLOR(BLU)
      A                                  3  2'  Kod ISIN    Nazwa          -
-     A                                      Emitent         Data em. Kr Wal -
-     A                                       Wlk.em.'
+     A                                      Emitent         Data em. Kr Wal'
      A          R FOOTER
      A                                      OVERLAY
-     A                                 23  2'Opcja: 4=Usuń'
+     A                                 23  2'F3=Exit   F6=Dodaj'
      A                                      COLOR(BLU)
      A          R SFL                       SFL
      A            SFOPT          1A  B  4  2VALUES(' ' '4')
@@ -27,7 +26,6 @@
      A            SFISSDT       10A  O  4 53
      A            SFCNTRY        2A  O  4 64
      A            SFCURR         3A  O  4 67
-     A            SFSIZE         9Y 2O  4 71EDTCDE(1)
      A          R SFLCTL                    SFLCTL(SFL)
      A                                      SFLSIZ(9999)
      A                                      SFLPAG(0010)

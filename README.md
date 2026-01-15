@@ -29,6 +29,7 @@ Informacja o liście dostępnych akcji prezentowana jest w wierszu pod listą in
 * Serwer: IBM Power
 * System: IBM i 7.5
 * Baza danych: IBM DB2 for IBM i
+* Język programowania: ILE RPG Free Form
 
 ## Szybki start
 

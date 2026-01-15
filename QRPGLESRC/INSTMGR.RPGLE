@@ -64,7 +64,6 @@
                SFISSDT = %CHAR(ISSUEDT:*ISO);
                SFCNTRY = COUNTRY;
                SFCURR = CURRENCY;
-               SFSIZE = ISSUESZ;
                WRITE SFL;
             Endif;
          Enddo;
@@ -85,6 +84,8 @@
          *IN31 = (RRN > 0);  // SFLDSP
          *IN32 = *ON;        // SFLDSPCTL
 
+         WRITE HEADER;
+         WRITE FOOTER;
          EXFMT SFLCTL;
 
          *IN31 = *OFF;
