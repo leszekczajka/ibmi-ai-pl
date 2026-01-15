@@ -11,7 +11,19 @@ Słownik instrumentów ma następujące atrybuty:
 * waluta emisji
 * wielkość emisji
 
-Słownik instrumentów przechowywany jest w bazie danych. Do przeglądania dostępny jest program działający w terminalu 5250, który prezentuje w formie subfile listę instrumentów. Lista jest posortowana po kodzie ISIN. Uzytkownik może przeglądać listę przewijając ją w dół i w górę przy użyciu PgUp i PgDn.
+Słownik instrumentów przechowywany jest w bazie danych.
+
+## Program
+
+Do przeglądania dostępny jest program działający w terminalu 5250, który prezentuje w formie subfile listę instrumentów. Lista jest posortowana po kodzie ISIN. Na liście prezentowane są kolumny:
+* kod ISIN
+* nazwa krótka instrumentu
+* nazwa emitenta
+* data emisji
+* kraj emisji
+* waluta emisji
+
+Użytkownik może przeglądać listę przewijając ją w dół i w górę przy użyciu PgUp i PgDn.
 
 ## Opcje
 
@@ -20,7 +32,9 @@ W programie dostępne są akcje:
 * F6=Add - Utworzenie nowego instrumentu w słowniku
 
 Dla każdej wskazanej pozycji na liście dostępne są opcje:
+* 2=Edit - edycja instrumentu ze słownika, bez możliwości zmiany kodu ISIN
 * 4=Delete - usunięcie instrumentu ze słownika
+* 5=Details - prezentacja wszystkich szczegółów instrumentu
 
 Informacja o liście dostępnych akcji prezentowana jest w wierszu pod listą instrumentów. Informacja o liście dostępnych opcji prezentowana jest w wierszu nad listą instrumentów.
 

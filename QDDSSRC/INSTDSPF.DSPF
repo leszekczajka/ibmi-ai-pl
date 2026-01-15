@@ -18,7 +18,7 @@
      A                                      OVERLAY
      A                                 23  2'F3=Exit   F6=Dodaj'
      A                                      COLOR(BLU)
-     A          R SFL                       SFL OVERLAY
+     A          R SFL                       SFL
      A            SFOPT          1A  B  4  2VALUES(' ' '4')
      A            SFISIN        12A  O  4  4
      A            SFSHORT       18A  O  4 17
@@ -33,4 +33,5 @@
      A  32                                  SFLDSPCTL
      A  33                                  SFLCLR
      A  34                                  SFLEND(*MORE)
+     A                                      OVERLAY
      A            DUMMY          1A  H
