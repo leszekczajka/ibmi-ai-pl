@@ -171,7 +171,7 @@
       * Procedura ValidInstr - Walidacja danych instrumentu
       *================================================================
      P ValidInstr      B
-     D ValidInstr      PI            N
+     D ValidInstr      PI              N
 
       /FREE
          *IN50 = *OFF;
