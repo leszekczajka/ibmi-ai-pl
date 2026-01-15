@@ -6,7 +6,7 @@
       *================================================================
 
      FINSTLF    IF   E           K DISK
-     FINSTPF    UF A E           K DISK
+     FINSTPF    UF A E           K DISK    RENAME(INSTREC:INSTPFR)
      FINSTDSPF  CF   E             WORKSTN
      F                                     SFILE(SFL:RRN)
      FINSTMNT   CF   E             WORKSTN
@@ -125,7 +125,6 @@
 
       /FREE
          MODE = 'DODAWANIE';
-         ISINDS = ' ';  // Normalne wyświetlanie
          ISIN = '';
          SHORTNM = '';
          EMITENT = '';
@@ -146,7 +145,7 @@
             VALIDOK = ValidateInstrument();
 
             If VALIDOK;
-               WRITE INSTREC;
+               WRITE INSTPFR;
                Leave;
             Endif;
          Enddo;
@@ -161,9 +160,9 @@
      D   PISIN                       12A   CONST
 
       /FREE
-         CHAIN PISIN INSTREC;
+         CHAIN PISIN INSTPFR;
          If %FOUND(INSTPF);
-            DELETE INSTREC;
+            DELETE INSTPFR;
          Endif;
       /END-FREE
      P DeleteInstrument E
@@ -192,7 +191,7 @@
          Endif;
 
          // Sprawdź czy ISIN już istnieje
-         CHAIN ISIN INSTREC;
+         CHAIN ISIN INSTPFR;
          If %FOUND(INSTPF);
             *IN50 = *ON;
             ERRMSG = 'Kod ISIN już istnieje w słowniku';
