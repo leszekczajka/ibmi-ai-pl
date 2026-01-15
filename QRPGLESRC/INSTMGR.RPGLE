@@ -105,7 +105,7 @@
             If SFOPT <> '';
                Select;
                   When SFOPT = '4';  // Delete
-                     DeleteInstrument(SFISIN);
+                     DelInstr(SFISIN);
                   Other;
                      // Nieznana opcja - ignoruj
                Endsl;
@@ -142,7 +142,7 @@
             Endif;
 
             // Walidacja
-            VALIDOK = ValidateInstrument();
+            VALIDOK = ValidInstr();
 
             If VALIDOK;
                WRITE INSTPFR;
@@ -153,10 +153,10 @@
      P AddInstrument   E
 
       *================================================================
-      * Procedura DeleteInstrument - Usuwanie instrumentu
+      * Procedura DelInstr - Usuwanie instrumentu
       *================================================================
-     P DeleteInstrument B
-     D DeleteInstrument PI
+     P DelInstr        B
+     D DelInstr        PI
      D   PISIN                       12A   CONST
 
       /FREE
@@ -165,13 +165,13 @@
             DELETE INSTPFR;
          Endif;
       /END-FREE
-     P DeleteInstrument E
+     P DelInstr        E
 
       *================================================================
-      * Procedura ValidateInstrument - Walidacja danych instrumentu
+      * Procedura ValidInstr - Walidacja danych instrumentu
       *================================================================
-     P ValidateInstrument B
-     D ValidateInstrument PI          N
+     P ValidInstr      B
+     D ValidInstr      PI            N
 
       /FREE
          *IN50 = *OFF;
@@ -242,4 +242,4 @@
 
          Return *ON;
       /END-FREE
-     P ValidateInstrument E
+     P ValidInstr      E
