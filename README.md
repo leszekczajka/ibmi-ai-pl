@@ -15,13 +15,14 @@ Słownik instrumentów przechowywany jest w bazie danych. Do przeglądania dost�
 
 ## Opcje
 
-W programie dostępne są opcje:
+W programie dostępne są akcje:
 * F3=Exit - Wyjście z programu
 * F6=Add - Utworzenie nowego instrumentu w słowniku
 
 Dla każdej wskazanej pozycji na liście dostępne są opcje:
 * 4=Delete - usunięcie instrumentu ze słownika
 
+Informacja o liście dostępnych akcji prezentowana jest w wierszu pod listą instrumentów. Informacja o liście dostępnych opcji prezentowana jest w wierszu nad listą instrumentów.
 
 ## Infrastruktura
 

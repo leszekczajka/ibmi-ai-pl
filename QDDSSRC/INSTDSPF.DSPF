@@ -10,13 +10,14 @@
      A                                      OVERLAY
      A                                  1  2'Słownik instrumentów finansowych'
      A                                      DSPATR(HI)
-     A                                  2  2'Opcja i kod ISIN'
+     A                                  2  2'F3=Exit   F6=Dodaj'
+     A                                      COLOR(BLU)
      A                                  3  2'  Kod ISIN    Nazwa          -
      A                                      Emitent         Data em. Kr Wal -
      A                                       Wlk.em.'
      A          R FOOTER
      A                                      OVERLAY
-     A                                 23  2'F3=Exit   F6=Dodaj'
+     A                                 23  2'Opcja: 4=Usuń'
      A                                      COLOR(BLU)
      A          R SFL                       SFL
      A            SFOPT          1A  B  4  2VALUES(' ' '4')
